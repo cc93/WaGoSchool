@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>cloud-float</title>
+
+    <link rel="stylesheet" href="css/base.css">
+
+</head>
+<body style="background: #8bff98; width:100%; height: 100%;">
+    <cloud-float :speed="30">
+        <img src="img/00_cloud_01.png" style="position: absolute;top: 20px;">
+    </cloud-float>
+
+    <cloud-float :speed="50">
+        <img src="img/00_cloud_02.png" style="position: absolute;top: 50px;">
+    </cloud-float>
+
+    <cloud-float :speed="10">
+        <img src="img/00_cloud_03.png" style="position:absolute;">
+        <img src="img/09_cloud.png" style="position:absolute;">
+    </cloud-float>
+</body>
+
+
+<script src="js/vue.js"></script>
+<script type="x/template" id="cloud-float-template">
+    <div class="cloud-float" id="{{uuid}}" :style="moving" style="position: absolute">
+        <slot>html内容替换到这里</slot>
+    </div>
+</script>
+<script>
+    window.onload = function () {
+        Vue.component('cloud-float', {
+            template: '#cloud-float-template',
+            //传递属性
+            props: {
+                speed: {
+                    type: Number,
+                    default: 50
+                },
+                left: {
+                    type: Number,
+                    default: 10
+                }
+
+            },
+            //变化数据
+            data: function () {       //data 里面存放变化的内部数据
+                return {
+                    newLeft: 0,
+                    uuid: 'cloud-float-' + Math.random()
+                };
+
+            },
+            //计算样式
+            computed: {             //一旦data改变则会通知computed计算,计算样式的最终值,所以这里可以存放样式对象
+                moving: function () {
+//                console.log("样式更新啦! newLeft = " + this.newLeft);
+                    return {    //利用函数返回一个css样式对象
+                        left: this.newLeft + 'px'
+                    }
+                }
+
+            },
+            //变化数据的方法
+            methods: {},
+            //变化数据的方法
+            ready: function () {
+                console.log("组件加载完毕 ready, uuid =" + this.uuid);
+                var speed = this.speed;     //先从props获取用户设置值
+                var left = this.left;
+                var offset = 1;     //
+                var maxWidth = document.body.clientWidth;
+                var eleWidth = 0;
+                var me = this;     //因为setInterval中this就不一样了,所以要先把this指代的这个实例保存下来
+                setTimeout(function () {
+                    eleWidth = document.getElementById(me.uuid).children[0].clientWidth;   //有时候只能操作DOM来获取元素参数,比如获取元素的宽度,这时候需要指定一个唯一的id号uuid,因为操作DOM先要找到DOM元素,则必须保证元素的有一个唯一的识别码.计算uuid用到了随机数是因为一个文档可能实例化了多个此组件,组件内的元素结构都是相同的,每次实例化vm都要指定给元素一个唯一的id,从而保证唯一性
+                    console.log("eleWidth = " + eleWidth);      //适当延时才能获取到元素宽度,这里是个坑!!!
+                }, 100);
+                setInterval(function () {
+                    me.newLeft += 1;      //更新data
+                    if (me.newLeft > maxWidth) {
+                        me.newLeft = -eleWidth;
+                    }
+                }, speed);
+            }
+        });
+
+
+        new Vue({
+            el: 'body'
+        });
+    }
+
+</script>
+</html>

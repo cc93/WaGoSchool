@@ -1,0 +1,26 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:4bef7c4481b6d74edfd4d41f7efba304:815ba30cf4df108d9444064f53824ead:8564c5454fe63972052fe1644f29692b$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprites"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sp5-1 { display:inline-block; overflow: hidden; background-repeat: no-repeat; background-image: url('../sprite/sp5-1.png'); }
+
+.sp5-1-02_title { width: 582px; height: 111px; background-position: -1px -1px; }
+.sp5-1-06_title { width: 247px; height: 260px; background-position: -585px -1px; }
+.sp5-1-08_title { width: 562px; height: 104px; background-position: -1px -114px; }
+.sp5-1-10_title { width: 556px; height: 96px; background-position: -1px -220px; }
+.sp5-1-03_title { width: 406px; height: 166px; background-position: -559px -263px; }
+.sp5-1-00_title_01 { width: 488px; height: 50px; background-position: -1px -318px; }
+.sp5-1-09_title { width: 487px; height: 146px; background-position: -1px -370px; }
+.sp5-1-07_title { width: 475px; height: 190px; background-position: -490px -431px; }
+.sp5-1-00_title { width: 467px; height: 302px; background-position: -1px -518px; }
+.sp5-1-01_title { width: 387px; height: 168px; background-position: -1px -822px; }
+.sp5-1-05_title { width: 424px; height: 180px; background-position: -470px -623px; }
+.sp5-1-04_title { width: 398px; height: 178px; background-position: -470px -805px; }

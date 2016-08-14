@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>娃儿要上学校</title>
+
+    <!-- 在 meta 标签中进行基础分享信息设置-->
+    <meta name="wxm:timeline_title" content="我们邀您来见证幸&傅的婚礼">
+    <meta name="wxm:appmessage_title" content="我们邀您来见证幸&傅的婚礼">
+    <meta name="wxm:appmessage_desc"
+          content="借这蒙福喜乐的日子，幸一信 & 傅娜，诚意邀请您来一同见证我们在上帝面前所立下的婚约！因此，人要离开父母，与妻子连合，二人成为一体。（创世纪 2：24）">
+    <!-- 分享缩略图，绝对路径 默认 share.jpg -->
+    <meta name="wxm:img_url" content="share_200_200.jpg">
+
+    <!-- 分享链接-->
+    <!--<meta name="wxm:link" content="http://wximg.gtimg.com/tmt/_demo/wxmoment/share.html">-->
+    <!-- 在 meta 标签中进行基础分享信息设置 End-->
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- css/app.css -->
+    <!-- build:css css/app.css -->
+    <link type="text/css" media="screen" rel="stylesheet" href="./css/base.css">
+    <link type="text/css" media="screen" rel="stylesheet" href="./css/main.css">
+    <link type="text/css" media="screen" rel="stylesheet" href="./css/swiper-3.2.7.min.css">
+    <link type="text/css" media="screen" rel="stylesheet" href="./css/jquery-confirm.min.css">
+    <link type="text/css" media="screen" rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- endbuild -->
+
+    <!-- build:inlinejs -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/smartjs.0.0.1.min.js"></script>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/swiper-3.2.7.min.js"></script>
+    <script src="./js/jquery-confirm.min.js"></script>
+
+    <script src="./js/main.js"></script>
+    <!-- endbuild -->
+
+</head>
+
+<body id="stage" class="width-100 " ng-app="smart" ng-controller="smart_ctrl" ng-cloak
+      style="">
+
+<div class="page" ng-show="currentMenu==0" style="overflow: scroll">
+
+    <img class="pa" style="top: 20px;left: 20px;" src="images/logo_1.jpg" width="98px">
+    <img class="pa" style="top: 100px;left: 20px;" src="images/copy_01.png" width="234px">
+    <img style="margin-top: 180px;margin-left: 10px;" src="images/pic_1.png" width="254px">
+
+</div>
+<div class="page" ng-show="currentMenu==1" style="height: auto">
+    <div class="main_page_containor" style="">
+
+        <div class="title_div" style="border-color: #90c31f">健康</div>
+
+        <div class="type_div">（一）身心状况</div>
+        <div class="gray_line"></div>
+
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标1 具有健康的体态
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1">5-6岁</div>
+            <ul>
+                <li>
+                    身高和体重适宜。<br/>
+                    参考标准：<br/>
+                    男孩<br/>
+                    身高：106.1~125.8厘米<br/>
+                    体重：15.9~27.1公斤<br/><br/>
+                    女孩 身高：104.9~125.4厘米<br/>
+                    体重：15.3~27.8公斤<br/>
+                    <br/>
+                </li>
+                <li>
+                    经常保持正确的站、坐和行走姿势。
+
+                    <br/><br/>
+                </li>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_1')">教育建议</div>
+            <br/> <br/>
+        </div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标2 情绪安定愉快
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    经常保持愉快的情绪。知道引起自己某种情绪的原因，并努力缓解。<br/>
+                </li>
+                <br/>
+                <li>
+                    表达情绪的方式比较适度，不乱发脾气。
+                    <br/><br/>
+                </li>
+                <li>
+                    能随着活动的需要转换情绪和注意力。
+                    <br/><br/>
+                </li>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_2')">教育建议</div>
+            <br/> <br/>
+
+        </div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标3 具有一定的适应能力
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能在较热或较冷的户外环境中连续活动半小时以上。
+                </li>
+                <br>
+                <li>
+                    天气变化时较少感冒，能适应车、船等交通工具造成的轻微颠簸。
+                </li>
+                <br>
+                <li>
+                    能较快融入新的人际关系环境。如换了新的幼儿园或班级能较快适应。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_3')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+
+        <div class="type_div">（二）动作发展</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标1 具有一定的平衡能力，动作协调、灵敏
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能在斜坡、荡桥和有一定间隔的物体上较平稳地行走。
+                </li>
+                <br/>
+                <li>
+                    能以手脚并用的方式安全地爬攀登架、网等。
+                </li>
+                <br/>
+                <li>
+                    能连续跳绳。
+                </li>
+                <br/>
+                <li>
+                    能躲避他人滚过来的球或扔过来的沙包。
+                </li>
+                <br/>
+                <li>
+                    能连续拍球。
+                </li>
+                <br/>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_4')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标2 具有一定的力量和耐力
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能双手抓杠悬空吊起20秒左右。
+                </li>
+                <br/>
+                <li>
+                    能单手将沙包向前投掷 5米左右。
+                </li>
+                <br/>
+                <li>
+                    能单脚连续向前跳8米左右。
+                </li>
+                <br/>
+                <li>
+                    能快跑25米左右。
+                </li>
+                <br/>
+                <li>
+                    能连续行走1.5公里以上（途中可适当停歇）。
+                </li>
+                <br/>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_5')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标3 手的动作灵活协调
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能根据需要画出图形，线条基本平滑。
+                </li>
+                <br/>
+                <li>
+                    能熟练使用筷子。
+                </li>
+                <br/>
+                <li>
+                    能沿轮廓线剪出由曲线构成的简单图形，边线吻合且平滑。
+                </li>
+                <br/>
+                <li>
+                    能使用简单的劳动工具或用具。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_6')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+
+        <div class="type_div">（三） 生活习惯与生活能力</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标1 具有良好的生活与卫生习惯
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    养成每天按时睡觉和起床的习惯。
+                </li>
+                <br/>
+                <li>
+                    能主动参加体育活动。
+                </li>
+                <br/>
+                <li>
+                    吃东西时细嚼慢咽。
+                </li>
+                <br/>
+                <li>
+                    主动饮用白开水，不贪喝饮料。
+                </li>
+                <br/>
+                <li>
+                    主动保护眼睛。不在光线过强或过暗的地方看书，连续看电视等不超过30分钟。
+                </li>
+                <br>
+                <li>每天早晚主动刷牙，饭前便后主动洗手，方法正确。
+                </li>
+                <br/>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_7')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标2 具有基本的生活自理能力
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能知道根据冷热增减衣服。
+                </li>
+                <br/>
+                <li>
+                    会自己系鞋带。
+                </li>
+                <br/>
+                <li>
+                    能按类别整理好自己的物品。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_8')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #90c31f">■</span>
+            目标3 具备基本的安全知识和自我保护能力
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    未经大人允许不给陌生人开门。
+                </li>
+                <br/>
+                <li>
+                    能自觉遵守基本的安全规则和交通规则。
+                </li>
+                <br/>
+                <li>
+                    运动时能注意安全，不给他人造成危险。
+                </li>
+                <br/>
+                <li>
+                    知道一些基本的防灾知识。
+                </li>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_9')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+
+    </div>
+
+</div>
+<div class="page" ng-show="currentMenu==2" style="height: auto">
+    <div class="main_page_containor" style="">
+        <div class="title_div" style="border-color: #e4b336">语言</div>
+
+        <div class="type_div">（一）倾听与表达</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #e4b336">■</span>
+            目标1 认真听并能听懂常用语言
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    在集体中能注意听老师或其他人讲话。
+                </li>
+                <br/>
+                <li>
+                    听不懂或有疑问时能主动提问。
+                </li>
+                <br/>
+                <li>
+                    能结合情境理解一些表示因果、假设等相对复杂的句子。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_10')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #e4b336">■</span>
+            目标2 愿意讲话并能清楚地表达
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    愿意与他人讨论问题，敢在众人面前说话。
+                </li>
+                <br/>
+                <li>
+                    会说本民族或本地区的语言和普通话，发音正确清晰。少数民族聚居地区幼儿基本会说普通话。
+                </li>
+                <br/>
+                <li>
+                    能有序、连贯、清楚地讲述一件事情。
+                </li>
+                <br/>
+                <li>
+                    讲述时能使用常见的形容词、同义词等，语言比较生动。
+                </li>
+                <br>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_11')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #e4b336">■</span>
+            目标3 具有文明的语言习惯
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    别人讲话时能积极主动地回应。
+                </li>
+                <br/>
+                <li>
+                    能根据谈话对象和需要，调整说话的语气。
+                </li>
+                <br/>
+                <li>
+                    懂得按次序轮流讲话，不随意打断别人。
+                </li>
+                <br/>
+                <li>
+                    能依据所处情境使用恰当的语言。如在别人难过时会用恰当的语言表示安慰。
+                </li>
+                <br>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_12')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+
+        <div class="type_div">（二）阅读与书写准备</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #e4b336">■</span>
+            目标1 喜欢听故事，看图书
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    专注地阅读图书。
+                </li>
+                <br/>
+                <li>
+                    喜欢与他人一起谈论图书和故事的有关内容。
+                </li>
+                <br/>
+                <li>
+                    对图书和生活情境中的文字符号感兴趣，知道文字表示一定的意义。
+                </li>
+                <br/>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_13')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #e4b336">■</span>
+            目标2 具有初步的阅读理解能力
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能说出所阅读的幼儿文学作品的主要内容。
+                </li>
+                <br/>
+                <li>
+                    能根据故事的部分情节或图书画面的线索猜想故事情节的发展，或续编、创编故事。
+                </li>
+                <br/>
+                <li>
+                    对看过的图书、听过的故事能说出自己的看法。
+                </li>
+                <br/>
+                <li>
+                    能初步感受文学语言的美。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_14')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #e4b336">■</span>
+            目标3 具有书面表达的愿望和初步技能
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    愿意用图画和符号表现事物或故事。
+                </li>
+                <br/>
+                <li>
+                    会正确书写自己的名字。
+                </li>
+                <br/>
+                <li>
+                    写画时姿势正确。
+                </li>
+                <br/>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_15')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+    </div>
+</div>
+<div class="page" ng-show="currentMenu==3" style="height: auto">
+
+    <div class="main_page_containor" style="">
+        <div class="title_div" style="border-color: #193c95">社会</div>
+
+        <div class="type_div">（一）人际交往</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #193c95">■</span>
+            目标1 愿意与人交往
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    有自己的好朋友，也喜欢结交新朋友。
+                </li>
+                <br/>
+                <li>
+                    有问题愿意向别人请教。
+                </li>
+                <br/>
+                <li>
+                    有高兴的或有趣的事愿意与大家分享。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_16')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #193c95">■</span>
+            目标2 能与同伴友好相处
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能想办法吸引同伴和自己一起游戏。
+                </li>
+                <br/>
+                <li>
+                    活动时能与同伴分工合作，遇到困难能一起克服。
+                </li>
+                <br/>
+                <li>
+                    与同伴发生冲突时能自己协商解决。
+                </li>
+                <br/>
+                <li>
+                    知道别人的想法有时和自己不一样，能倾听和接受别人的意见，不能接受时会说明理由。
+                </li>
+                <br>
+                <li>
+                    不欺负别人，也不允许别人欺负自己。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_17')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #193c95">■</span>
+            目标3 具有自尊、自信、自主的表现
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能主动发起活动或在活动中出主意、想办法。
+                </li>
+                <br/>
+                <li>
+                    做了好事或取得了成功后还想做得更好。
+                </li>
+                <br/>
+                <li>
+                    自己的事情自己做，不会的愿意学。
+                </li>
+                <br/>
+                <li>
+                    主动承担任务，遇到困难能够坚持而不轻易求助。
+                </li>
+                <br>
+                <li>
+                    与别人的看法不同时，敢于坚持自己的意见并说出理由。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_18')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #193c95">■</span>
+            目标4 关心尊重他人
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能有礼貌地与人交往。
+                </li>
+                <br/>
+                <li>
+                    能关注别人的情绪和需要，并能给予力所能及的帮助。
+                </li>
+                <br/>
+                <li>
+                    尊重为大家提供服务的人，珍惜他们的劳动成果。
+                </li>
+                <br/>
+                <li>
+                    接纳、尊重与自己的生活方式或习惯不同的人。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_19')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="type_div">（二）社会适应</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #193c95">■</span>
+            目标1 喜欢并适应群体生活
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    在群体活动中积极、快乐。
+                </li>
+                <br/>
+                <li>
+                    对小学生活有好奇和向往。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_20')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #193c95">■</span>
+            目标2 遵守基本的行为规范
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    理解规则的意义，能与同伴协商制定游戏和活动规则。
+                </li>
+                <br/>
+                <li>
+                    爱惜物品，用别人的东西时也知道爱护。
+                </li>
+                <br>
+                <li>
+                    做了错事敢于承认，不说谎。
+                </li>
+                <br>
+                <li>
+                    能认真负责地完成自己所接受的任务。
+                </li>
+                <br>
+                <li>
+                    爱护身边的环境，注意节约资源。
+                </li>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_21')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #193c95">■</span>
+            目标3 具有初步的归属感
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    愿意为集体做事，为集体的成绩感到高兴。
+                </li>
+                <br/>
+                <li>
+                    能感受到家乡的发展变化并为此感到高兴。
+                </li>
+                <br>
+                <li>
+                    知道自己的民族，知道中国是一个多民族的大家庭，各民族之间要互相尊重，团结友爱。
+                </li>
+                <br>
+                <li>
+                    知道国家一些重大成就，爱祖国，为自己是中国人感到自豪。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_22')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+    </div>
+</div>
+<div class="page" ng-show="currentMenu==4" style="height: auto">
+
+    <div class="main_page_containor" style="">
+        <div class="title_div" style="border-color: #21a7d0">科学</div>
+
+        <div class="type_div">（一）科学探究</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #21a7d0">■</span>
+            目标1 亲近自然，喜欢探究
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    对自己感兴趣的问题总是刨根问底。
+                </li>
+                <br/>
+                <li>
+                    能经常动手动脑寻找问题的答案。
+                </li>
+                <br/>
+                <li>
+                    探索中有所发现时感到兴奋和满足。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_23')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #21a7d0">■</span>
+            目标2 具有初步的探究能力
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能通过观察、比较与分析，发现并描述不同种类物体的特征或某个事物前后的变化。
+                </li>
+                <br/>
+                <li>
+                    能用一定的方法验证自己的猜测。
+                </li>
+                <br/>
+                <li>
+                    在成人的帮助下能制定简单的调查计划并执行。
+                </li>
+                <br/>
+                <li>
+                    能用数字、图画、图表或其他符号记录。
+                </li>
+                <br>
+                <li>
+                    探究中能与他人合作与交流。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_24')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #21a7d0">■</span>
+            目标3 在探究中认识周围事物和现象
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能察觉到动植物的外形特征、习性与生存环境的适应关系。
+                </li>
+                <br/>
+                <li>
+                    能发现常见物体的结构与功能之间的关系。
+                </li>
+                <br/>
+                <li>
+                    能探索并发现常见的物理现象产生的条件或影响因素，如影子、沉浮等。
+                </li>
+                <br/>
+                <li>
+                    感知并了解季节变化的周期性，知道变化的顺序。
+                </li>
+                <br>
+                <li>
+                    初步了解人们的生活与自然环境的密切关系，知道尊重和珍惜生命，保护环境。
+                </li>
+                <br>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_25')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="type_div">（二）数学认知</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #21a7d0">■</span>
+            目标1 初步感知生活中数学的有用和有趣
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能发现事物简单的排列规律，并尝试创造新的排列规律。
+                </li>
+                <br/>
+                <li>
+                    能发现生活中许多问题都可以用数学的方法来解决，体验解决问题的乐趣。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_26')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #21a7d0">■</span>
+            目标2 感知和理解数、量及数量关系
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    初步理解量的相对性。
+                </li>
+                <br/>
+                <li>
+                    借助实际情境和操作（如合并或拿取）理解 “加”和“减”的实际意义。
+                </li>
+                <br/>
+                <li>
+                    能通过实物操作或其它方法进行10以内的加减运算。
+                </li>
+                <br/>
+                <li>
+                    能用简单的记录表、统计图等表示简单的数量关系。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_27')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #21a7d0">■</span>
+            目标3 感知形状与空间关系
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能用常见的几何形体有创意地拼搭或画出物体的造型。
+                </li>
+                <br/>
+                <li>
+                    能按语言指示或根据简单示意图正确取放物品。
+                </li>
+                <br/>
+                <li>
+                    能辨别自己的左右。
+                </li>
+                <br/>
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_28')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+    </div>
+</div>
+<div class="page" ng-show="currentMenu==5" style="height: auto">
+
+    <div class="main_page_containor" style="">
+        <div class="title_div" style="border-color: #d40f60">艺术</div>
+
+        <div class="type_div">（一）感受与欣赏</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #d40f60">■</span>
+            目标1 喜欢自然界与生活中美的事物
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    乐于收集美的物品或向别人介绍所发现的美的事物。
+                </li>
+                <br/>
+                <li>
+                    乐于模仿自然界和生活环境中有特点的声音，并产生相应的联想。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn"  ng-click="showPopUp('#suggest_29')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #d40f60">■</span>
+            目标2 喜欢欣赏多种多样的艺术形式和作品
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    艺术欣赏时常常用表情、动作、语言等方式表达自己的理解。
+                </li>
+                <br/>
+                <li>
+                    愿意和别人分享、交流自己喜爱的艺术作品和美感体验。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_30')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="type_div">（二）表现与创造</div>
+        <div class="gray_line"></div>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #d40f60">■</span>
+            目标1 喜欢进行艺术活动并大胆表现
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    积极参与艺术活动，有自己比较喜欢的活动形式。
+                </li>
+                <br/>
+                <li>
+                    能用多种工具、材料或不同的表现手法表达自己的感受和想象。
+                </li>
+                <br/>
+                <li>
+                    艺术活动中能与他人相互配合，也能独立表现。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_31')">教育建议</div>
+            <br/> <br/>
+        </div>
+        <br>
+
+        <div class="sub_title_div">
+            <span class="squre_mark" style="color: #d40f60">■</span>
+            目标2 具有初步的艺术表现与创造能力
+        </div>
+        <div class="sub_content">
+            <div class="sub_content_h1"></div>
+            <ul>
+                <li>
+                    能用基本准确的节奏和音调唱歌。
+                </li>
+                <br/>
+                <li>
+                    能用律动或简单的舞蹈动作表现自己的情绪或自然界的情景。
+                </li>
+                <br/>
+                <li>
+                    能自编自演故事，并为表演选择和搭配简单的服饰、道具或布景。
+                </li>
+                <br/>
+                <li>
+                    能用自己制作的美术作品布置环境、美化生活。
+                </li>
+                <br/>
+
+            </ul>
+            <div class="ccbtn suggest_btn" ng-click="showPopUp('#suggest_32')">教育建议</div>
+
+            <br/> <br/>
+        </div>
+        <br>
+
+
+
+    </div>
+</div>
+
+
+<div id="right_menu">
+    <div class="menu_btn " ng-click="goMenu(1)" ng-class="{true: 'select', false: ''}[currentMenu==1]"
+         style="background: #90c31f">
+        健<br/>康
+    </div>
+    <div class="menu_btn" ng-click="goMenu(2)" ng-class="{true: 'select', false: ''}[currentMenu==2]"
+         style="background: #e4b336">
+        语<br/>言
+    </div>
+
+    <div class="menu_btn" ng-click="goMenu(3)" ng-class="{true: 'select', false: ''}[currentMenu==3]"
+         style="background: #193c95">
+        社<br/>会
+    </div>
+
+    <div class="menu_btn" ng-click="goMenu(4)" ng-class="{true: 'select', false: ''}[currentMenu==4]"
+         style="background: #21a7d0">
+        科<br/>学
+    </div>
+
+    <div class="menu_btn" ng-click="goMenu(5)" ng-class="{true: 'select', false: ''}[currentMenu==5]"
+         style="background: #d40f60">
+        艺<br/>术
+    </div>
+</div>
+
+
+<template id="suggest_1">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                为幼儿提供营养丰富、健康的饮食。如：
+                <ul>
+                    <li>
+                        参照《中国孕期、哺乳期妇女和 0 ～ 6 岁儿童膳食指南》，为幼儿提供谷物、蔬菜、水果、肉、奶、蛋、豆制品等多样化的食物，均衡搭配。
+                    </li>
+                    <li>
+                        烹调方式要科学，尽量少煎炸、烧烤、腌制。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                保证幼儿每天睡 11 ～ 12 小时，其中午睡一般应达到 2 小时左右。午睡时间可根据幼儿的年龄、季节的变化和个体差异适当减少
+            </li>
+            <li>
+                注意幼儿的体态，帮助他们形成正确的姿势。如：
+                <ul>
+                    <li>
+                        提醒幼儿要保持正确的站、坐、走姿势；发现有八字脚、罗圈腿、驼背等骨骼发育异常的情况，应及时就医矫治。
+                    </li>
+                    <li>
+                        桌、椅和床要合适。椅子的高度以幼儿写画时双脚能自然着地、大腿基本保持水平状为宜；桌子的高度以写画时身体能坐直，不驼背、不耸肩为宜；床不宜过软。
+                    </li>
+                </ul>
+            </li>
+            <li>每年为幼儿进行健康检查。</li>
+        </ul>
+    </div>
+    <img src="images/01jy_01.jpg"/>
+</template>
+<template id="suggest_2">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                营造温暖、轻松的心理环境，让幼儿形成安全感和信赖感。如：
+                <ul>
+                    <li>
+                        保持良好的情绪状态，以积极、愉快的情绪影响幼儿。
+                    </li>
+                    <li>
+                        以欣赏的态度对待幼儿。注意发现幼儿的优点，接纳他们的个体差异，不简单与同伴做横向比较。
+                    </li>
+                    <li>
+                        幼儿做错事时要冷静处理，不厉声斥责，更不能打骂。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                帮助幼儿学会恰当表达和调控情绪。如：
+                <ul>
+                    <li>
+                        成人用恰当的方式表达情绪，为幼儿做出榜样。如：生气时不乱发脾气，不迁怒于人。
+                    </li>
+                    <li>
+                        成人和幼儿一起谈论自己高兴或生气的事，鼓励幼儿与人分享自己的情绪。
+                    </li>
+                    <li>
+                        允许幼儿表达自己的情绪，并给予适当的引导。如：幼儿发脾气时不硬性压制，等其平静后告诉他什么行为是可以接受的。
+                    </li>
+                    <li>发现幼儿不高兴时，主动询问情况，帮助他们化解消极情绪。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/01jy_02.jpg"/>
+</template>
+<template id="suggest_3">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                保证幼儿的户外活动时间，提高幼儿适应季节变化的能力。幼儿每天的户外活动时间一般不少于 2 小时，其中体育活动时间不少于 1小时，季节交替时要坚持。
+                <ul>
+                    <li>
+                        气温过热或过冷的季节或地区应因地制宜，选择温度适当的时间段开展户外活动，也可根据气温的变化和幼儿的个体差异，适当减少活动的时间。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                经常与幼儿玩拉手转圈、秋千、转椅等游戏活动，让幼儿适应轻微的摆动、颠簸、旋转，促进其平衡机能的发展。
+            </li>
+            <li>锻炼幼儿适应生活环境变化的能力。如：
+                <ul>
+                    <li>
+                        注意观察幼儿在新环境中的饮食、睡眠、游戏等方面的情况，采取相应的措施帮助他们尽快适应新环境。
+                    </li>
+                    <li>经常带幼儿接触不同的人际环境，如参加亲戚朋友聚会，多和不熟悉的小朋友玩，使幼儿较快适应新的人际关系。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/01jy_03.jpg"/>
+</template>
+<template id="suggest_4">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                利用多种活动发展身体平衡和协调能力。如：
+                <ul>
+                    <li>
+                        走平衡木，或沿着地面直线、田埂行走。
+                    </li>
+                    <li>
+                        玩跳房子、踢毽子、蒙眼走路、踩小高跷等游戏活动。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                发展幼儿动作的协调性和灵活性。如：
+                <ul>
+                    <li>
+                        成鼓励幼儿进行跑跳、钻爬、攀登、投掷、拍球等活动。
+                    </li>
+                    <li>
+                        玩跳竹竿、滚铁环等传统体育游戏。
+                    </li>
+                </ul>
+            </li>
+            <li>对于拍球、跳绳等技能性活动，不要过于要求数量，更不能机械训练。</li>
+            <li>结合活动内容对幼儿进行安全教育，注重在活动中培养幼儿的自我保护能力。</li>
+        </ul>
+    </div>
+    <img src="images/01jy_04.jpg"/>
+</template>
+<template id="suggest_5">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                开展丰富多样、适合幼儿年龄特点的各种身体活动，如走、跑、跳、攀、爬等，鼓励幼儿坚持下来，不怕累。
+            </li>
+            <li>
+                日常生活中鼓励幼儿多走路、少坐车；自己上下楼梯，自己背包。
+            </li>
+        </ul>
+    </div>
+    <img src="images/01jy_05.jpg"/>
+</template>
+<template id="suggest_6">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                创造条件和机会，促进幼儿手的动作灵活协调。如：
+                <ul>
+                    <li>
+                        提供画笔、剪刀、纸张、泥团等工具和材料，或充分利用各种自然、废旧材料和常见物品，让幼儿进行画、剪、折、粘等美工活动。
+                    </li>
+                    <li>
+                        引导幼儿生活自理或参与家务劳动，发展其手的动作。如：练习自己用筷子吃饭、扣扣子，帮助家人择菜叶、做面食等。
+                    </li>
+                    <li>
+                        幼儿园在布置娃娃家、商店等活动区时，多提供原材料和半成品，让幼儿有更多机会参与制作活动。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿注意活动安全。如：
+                <ul>
+                    <li>
+                        为幼儿提供的塑料粒、珠子等活动材料要足够大，材质要安全，以免造成异物进入气管、铅中毒等伤害。提供幼儿用安全剪刀。
+                    </li>
+                    <li>
+                        为幼儿示范拿筷子、握笔的正确姿势以及使用剪刀、锤子等工具的方法。
+                    </li>
+                    <li>
+                        提醒幼儿不要拿剪刀等锋利工具玩耍，用完后要放回原处。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/01jy_06.jpg"/>
+</template>
+<template id="suggest_7">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                让幼儿保持有规律的生活，养成良好的作息习惯。如：早睡早起、每天午睡、按时进餐、吃好早餐等。
+            </li>
+            <li>
+                帮助幼儿养成良好的饮食习惯。如：
+                <ul>
+                    <li>
+                        合理安排餐点，帮助幼儿养成定点、定时、定量进餐的习惯。
+                    </li>
+                    <li>
+                        帮助幼儿了解食物的营养价值，引导他们不偏食不挑食、少吃或不吃不利于健康的食品；多喝白开水，少喝饮料。
+                    </li>
+                    <li>
+                        吃饭时不过分催促，提醒幼儿细嚼慢咽，不要边吃边玩。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                帮助幼儿养成良好的个人卫生习惯。如：
+                <ul>
+                    <li>
+                        早晚刷牙、饭后漱口。
+                    </li>
+                    <li>勤为幼儿洗澡、换衣服、剪指甲。</li>
+                    <li>提醒幼儿保护五官，如不乱挖耳朵、鼻孔，看电视时保持3米左右的距离等。</li>
+                </ul>
+            </li>
+            <li>激发幼儿参加体育活动的兴趣，养成锻炼的习惯。如：
+                <ul>
+                    <li>为幼儿准备多种体育活动材料，鼓励他选择自己喜欢的材料开展活动。</li>
+                    <li>经常和幼儿一起在户外运动和游戏，鼓励幼儿和同伴一起开展体育活动。</li>
+                    <li>和幼儿一起观看体育比赛或有关体育赛事的电视节目，培养他对体育活动的兴趣。</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</template>
+<template id="suggest_8">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                鼓励幼儿做力所能及的事情，对幼儿的尝试与努力给予肯定，不因做不好或做得慢而包办代替。
+            </li>
+            <li>
+                指导幼儿学习和掌握生活自理的基本方法，如：穿脱衣服和鞋袜、洗手洗脸、擦鼻涕、擦屁股的正确方法。
+            </li>
+            <li>提供有利于幼儿生活自理的条件。如：
+                <ul>
+                    <li>
+                        提供一些纸箱、盒子，供幼儿收拾和存放自己的玩具、图书或生活用品等。
+                    </li>
+                    <li>
+                        幼儿的衣服、鞋子等要简单实用，便于自己穿脱。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/01jy_08.jpg"/>
+</template>
+<template id="suggest_9">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                创设安全的生活环境，提供必要的保护措施。如：
+                <ul>
+                    <li>
+                        要把热水瓶、药品、火柴、刀具等物品放到幼儿够不到的地方；阳台或窗台要有安全保护措施；要使用安全的电源插座等。
+                    </li>
+                    <li>
+                        在公共场所要注意照看好幼儿；幼儿乘车、乘电梯时要有成人陪伴；不把幼儿单独留在家里或汽车里等。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                结合生活实际对幼儿进行安全教育。如：
+                <ul>
+                    <li>
+                        外出时，提醒幼儿要紧跟成人，不远离成人的视线，不跟陌生人走，不吃陌生人给的东西；不在河边和马路边玩耍；要遵守交通规则等。
+                    </li>
+                    <li>
+                        帮助幼儿了解周围环境中不安全的事物，不做危险的事。如：不动热水壶，不玩火柴或打火机，不摸电源插座，不攀爬窗户或阳台等。
+                    </li>
+                    <li>
+                        帮助幼儿认识常见的安全标识，如：小心触电、小心有毒、禁止下河游泳、紧急出口等。
+                    </li>
+                    <li>告诉幼儿不允许别人触摸自己的隐私部位。
+                    </li>
+
+                </ul>
+            </li>
+            <li>教给幼儿简单的自救和求救的方法。如：
+                <ul>
+                    <li>记住自己家庭的住址、电话号码、父母的姓名和单位，一旦走失时知道向成人求助，并能提供必要信息。</li>
+                    <li>遇到火灾或其他紧急情况时，知道要拨打110、120、119等求救电话。</li>
+                    <li>可利用图书、音像等材料对幼儿进行逃生和求救方面的教育，并运用游戏方式模拟练习。幼儿园应定期进行火灾、地震等自然灾害的逃生演习。</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</template>
+<template id="suggest_10">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                多给幼儿提供倾听和交谈的机会。如：经常和幼儿一起谈论他感兴趣的话题，或一起看图书、讲故事。
+            </li>
+            <li>
+                引导幼儿学会认真倾听。如：
+                <ul>
+                    <li>
+                        成人要耐心倾听别人（包括幼儿）的讲话，等别人讲完再表达自己的观点。
+                    </li>
+                    <li>
+                        与幼儿交谈时，要用幼儿能听得懂的语言。
+                    </li>
+                    <li>
+                        对幼儿提要求和布置任务时要求他注意听，鼓励他主动提问。
+                    </li>
+                </ul>
+            </li>
+            <li>对幼儿讲话时，注意结合情境使用丰富的语言，以便于幼儿理解。如：
+                <ul>
+                    <li>说话时注意语气、语调，让幼儿感受语气、语调的作用。如对幼儿的不合理要求以比较坚定的语气表示不同意；讲故事时，尽量把故事人物高兴、悲伤的心情用不同的语气、语调表现出来。</li>
+                    <li>根据幼儿的理解水平有意识地使用一些反映因果、假设、条件等关系的句子。</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/02yy_01.jpg"/>
+</template>
+<template id="suggest_11">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                为幼儿创造说话的机会并体验语言交往的乐趣。
+                <ul>
+                    <li>
+                        每天有足够的时间与幼儿交谈。如谈论他感兴趣的话题，询问和听取他对自己事情的意见等。
+                    </li>
+                    <li>
+                        尊重和接纳幼儿的说话方式，无论幼儿的表达水平如何，都应认真地倾听并给予积极的回应。
+                    </li>
+                    <li>
+                        鼓励和支持幼儿与同伴一起玩耍、交谈，相互讲述见闻、趣事或看过的图书、动画片等。
+                    </li>
+                    <li>
+                        方言和少数民族地区应积极为幼儿创设用普通话交流的语言环境。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿清楚地表达。如：
+                <ul>
+                    <li>
+                        和幼儿讲话时，成人自身的语言要清楚、简洁。
+                    </li>
+                    <li>
+                        当幼儿因为急于表达而说不清楚的时候，提醒他不要着急，慢慢说；同时要耐心倾听，给予必要的补充，帮助他理清思路并清晰地说出来。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/02yy_02.jpg"/>
+</template>
+<template id="suggest_12">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                成人注意语言文明，为幼儿做出表率。如：
+                <ul>
+                    <li>
+                        与他人交谈时，认真倾听，使用礼貌用语。
+                    </li>
+                    <li>
+                        在公共场合不大声说话，不说脏话、粗话。
+                    </li>
+                    <li>
+                        幼儿表达意见时，成人可蹲下来，眼睛平视幼儿，耐心听他把话说完。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                帮助幼儿养成良好的语言行为习惯。如：
+                <ul>
+                    <li>
+                        结合情境提醒幼儿一些必要的交流礼节。如：对长辈说话要有礼貌，客人来访时要打招呼，得到帮助时要说“谢谢”等。
+                    </li>
+                    <li>
+                        提醒幼儿遵守集体生活的语言规则，如：轮流发言，不随意打断别人讲话等。
+                    </li>
+                    <li>
+                        提醒幼儿注意公共场所的语言文明，如不大声喧哗。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/02yy_03.jpg"/>
+</template>
+<template id="suggest_13">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                为幼儿提供良好的阅读环境和条件。如：
+                <ul>
+                    <li>
+                        提供一定数量、符合幼儿年龄特点、富有童趣的图画书。
+                    </li>
+                    <li>
+                        提供相对安静的地方，尽量减少干扰，保证幼儿自主阅读。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                激发幼儿的阅读兴趣，培养阅读习惯。如：
+                <ul>
+                    <li>
+                        经常抽时间与幼儿一起看图书、讲故事。
+                    </li>
+                    <li>
+                        提供童谣、故事和诗歌等不同体裁的儿童文学作品，让幼儿自主选择和阅读。
+                    </li>
+                    <li>
+                        当幼儿遇到感兴趣的事物或问题时，和他一起查阅图书资料，让他感受图书的作用，体会通过阅读获取信息的乐趣。
+                    </li>
+                </ul>
+            </li>
+            <li>引导幼儿体会标识、文字符号的用途。如：
+                <ul>
+                    <li>向幼儿介绍医院、公用电话等生活中的常见标识，让他知道标识可以代表具体事物。</li>
+                    <li>结合生活实际，帮助幼儿体会文字的用途。如：买来新玩具时，把说明书上的文字念给幼儿听，了解玩具的玩法。</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/02yy_04.jpg"/>
+</template>
+<template id="suggest_14">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                经常和幼儿一起阅读，引导他以自己的经验为基础理解图书的内容。如：
+                <ul>
+                    <li>
+                        引导幼儿仔细观察画面，结合画面讨论故事内容，学习建立画面与故事内容的联系。
+                    </li>
+                    <li>
+                        和幼儿一起讨论或回忆书中的故事情节，引导他有条理地说出故事的大致内容。
+                    </li>
+                    <li>
+                        在给幼儿读书或讲故事时，可先不告诉名字，让幼儿听完后自己命名，并说出这样命名的理由。
+                    </li>
+                    <li>
+                        鼓励幼儿自主阅读，并与他人讨论自己在阅读中的发现、体会和想法。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                在阅读中发展幼儿的想象和创造能力。如：
+                <ul>
+                    <li>
+                        鼓励幼儿依据画面线索讲述故事，大胆推测、想象故事情节的发展，改编故事部分情节或续编故事结尾。
+                    </li>
+                    <li>
+                        鼓励幼儿用故事表演、绘画等不同的方式表达自己对图书和故事的理解。
+                    </li>
+                    <li>
+                        鼓励和支持幼儿自编故事，并为自编的故事配上图画，制成图画书。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿感受文学作品的美。如：
+                <ul>
+                    <li> 有意识地引导幼儿欣赏或模仿文学作品的语言节奏和韵律。</li>
+                    <li>给幼儿读书时，通过表情、动作和抑扬顿挫的声音传达书中的情绪情感，让幼儿体会作品的感染力和表现力。</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/02yy_05.jpg"/>
+</template>
+<template id="suggest_15">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                让幼儿在写写画画的过程中体验文字符号的功能，培养书写兴趣。如：
+                <ul>
+                    <li>
+                        准备供幼儿随时取放的纸、笔等材料，也可利用沙地、树枝等自然材料，满足幼儿自由涂画的需要。
+                    </li>
+                    <li>
+                        鼓励幼儿将自己感兴趣的事情或故事画下来并讲给别人听，让幼儿体会写写画画的方式可以表达自己的想法和情感。
+                    </li>
+                    <li>
+                        把幼儿讲过的事情用文字记录下来，并念给他听，使幼儿知道说的话可以用文字记录下来，从中体会文字的用途。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                在绘画和游戏中做必要的书写准备，如：
+                <ul>
+                    <li>
+                        通过把虚线画出的图形轮廓连成实线等游戏，促进手眼协调，同时帮助幼儿学习由上至下、由左至右的运笔技能。
+                    </li>
+                    <li>
+                        鼓励幼儿学习书写自己的名字。
+                    </li>
+                    <li>
+                        提醒幼儿写画时保持正确姿势。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/02yy_06.jpg"/>
+</template>
+<template id="suggest_16">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                主动亲近和关心幼儿，经常和他一起游戏或活动，让幼儿感受到与成人交往的快乐，建立亲密的亲子关系和师生关系。
+            </li>
+            <li>
+                创造交往的机会，让幼儿体会交往的乐趣。如：
+                <ul>
+                    <li>
+                        利用走亲戚、到朋友家做客或有客人来访的时机，鼓励幼儿与他人接触和交谈。
+                    </li>
+                    <li>
+                        鼓励幼儿参加小朋友的游戏，邀请小朋友到家里玩，感受有朋友一起玩的快乐。
+                    </li>
+                    <li>
+                        幼儿园应多为幼儿提供自由交往和游戏的机会，鼓励他们自主选择、自由结伴开展活动。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/03sh_01.jpg"/>
+</template>
+<template id="suggest_17">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                结合具体情境，指导幼儿学习交往的基本规则和技能。如：
+                <ul>
+                    <li>
+                        当幼儿不知怎样加入同伴游戏，或提出请求不被接受时，建议他拿出玩具邀请大家一起玩；或者扮成某个角色加入同伴的游戏。
+                    </li>
+                    <li>
+                        对幼儿与别人分享玩具、图书等行为给予肯定，让他对自己的表现感到高兴和满足。
+                    </li>
+                    <li>
+                        当幼儿与同伴发生矛盾或冲突时，指导他尝试用协商、交换、轮流玩、合作等方式解决冲突。
+                    </li>
+                    <li>
+                        利用相关的图书、故事，结合幼儿的交往经验，和他讨论什么样的行为受大家欢迎，想要得到别人的接纳应该怎样做。
+                    </li>
+                    <li>
+                        幼儿园应多为幼儿提供需要大家齐心协力才能完成的活动，让幼儿在具体活动中体会合作的重要性，学习分工合作。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                结合具体情境，引导幼儿换位思考，学习理解别人。如：
+                <ul>
+                    <li>
+                        幼儿有争抢玩具等不友好行为时，引导他们想想“假如你是那个小朋友，你有什么感受？”让幼儿学习理解别人的想法和感受。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                和幼儿一起谈谈他的好朋友，说说喜欢这个朋友的原因，引导他多发现同伴的优点、长处。
+            </li>
+        </ul>
+    </div>
+    <img src="images/03sh_02.jpg"/>
+</template>
+<template id="suggest_18">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                关注幼儿的感受，保护其自尊心和自信心。如：
+                <ul>
+                    <li>
+                        能以平等的态度对待幼儿，使幼儿切实感受到自己被尊重。
+                    </li>
+                    <li>
+                        对幼儿好的行为表现多给予具体、有针对性的肯定和表扬，让他对自己的优点和长处有所认识并感到满足和自豪。
+                    </li>
+                    <li>
+                        不要拿幼儿的不足与其他幼儿的优点作比较。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                鼓励幼儿自主决定，独立做事，增强其自尊心和自信心。如：
+                <ul>
+                    <li>
+                        与幼儿有关的事情要征求他的意见，即使他的意见与成人不同，也要认真倾听，接受他的合理要求。
+                    </li>
+                    <li>
+                        在保证安全的情况下，支持幼儿按自己的想法做事；或提供必要的条件，帮助他实现自己的想法。
+                    </li>
+                    <li>
+                        幼儿自己的事情尽量放手让他自己做，即使做得不够好，也应鼓励并给予一定的指导，让他在做事中树立自尊和自信。
+                    </li>
+                    <li>
+                        鼓励幼儿尝试有一定难度的任务，并注意调整难度，让他感受经过努力获得的成就感。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/03sh_03.jpg"/>
+</template>
+<template id="suggest_19">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                成人以身作则，以尊重、关心的态度对待自己的父母、长辈和其他人。如：
+                <ul>
+                    <li>
+                        经常问候父母，主动做家务。
+                    </li>
+                    <li>
+                        礼貌地对待老年人，如坐车时主动为老人让座。
+                    </li>
+                    <li>
+                        看到别人有困难能主动关心并给予一定的帮助。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                在阅读中发展幼儿的想象和创造能力。如：
+                <ul>
+                    <li>
+                        鼓励幼儿依据画面线索讲述故事，大胆推测、想象故事情节的发展，改编故事部分情节或续编故事结尾。
+                    </li>
+                    <li>
+                        鼓励幼儿用故事表演、绘画等不同的方式表达自己对图书和故事的理解。
+                    </li>
+                    <li>
+                        鼓励和支持幼儿自编故事，并为自编的故事配上图画，制成图画书。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿尊重、关心长辈和身边的人，尊重他人的劳动及成果。如：
+                <ul>
+                    <li>提醒幼儿关心身边的人，如妈妈累了，知道让她安静地休息一会儿。</li>
+                    <li> 借助故事、图书等给幼儿讲讲父母抚育孩子成长的经历，让幼儿理解和体会父爱与母爱。</li>
+                    <li>结合实际情境，提醒幼儿注意别人的情绪，了解他们的需要，给予适当的关心和帮助。</li>
+                    <li>利用生活情境和角色游戏，帮助幼儿了解与自己关系密切的社会服务机构及其工作，如商场、邮局、医院等，体会这些机构给大家提供的便利和服务，懂得尊重工作人员的劳动，珍惜劳动成果。</li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿学习用平等、接纳和尊重的态度对待差异。如：
+                <ul>
+                    <li>
+                        了解每个人都有自己的兴趣、爱好和特长，可以相互学习。
+                    </li>
+                    <li>
+                        利用民间游戏、传统节日等，适当向幼儿介绍我国主要民族和世界其它国家和民族的文化，帮助幼儿感知文化的多样性和差异性，理解人们之间是平等的，应该互相尊重，友好相处。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/03sh_04.jpg"/>
+</template>
+<template id="suggest_20">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                经常和幼儿一起参加一些群体性的活动，让幼儿体会群体活动的乐趣。如：参加亲戚、朋友和同事间的聚会以及适合幼儿参加的社区活动等，支持幼儿和不同群体的同伴一起游戏，丰富其群体活动的经验。
+            </li>
+            <li>
+                幼儿园组织活动时，可以经常打破班级的界限，让幼儿有更多机会参加不同群体的活动。
+            </li>
+            <li>
+                带领大班幼儿参观小学，讲讲小学有趣的活动，唤起他们对小学生活的好奇和向往，为入学做好心理准备。
+            </li>
+        </ul>
+    </div>
+    <img src="images/03sh_05.jpg"/>
+</template>
+<template id="suggest_21">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                成人要遵守社会行为规则，为幼儿树立良好的榜样。如：答应幼儿的事一定要做到、尊老爱幼、爱护公共环境，节约水电等。
+            </li>
+            <li>
+                结合社会生活实际，帮助幼儿了解基本行为规则或其它游戏规则，体会规则的重要性，学习自觉遵守规则。如：
+                <ul>
+                    <li>
+                        经常和幼儿玩带有规则的游戏，遵守共同约定的游戏规则。
+                    </li>
+                    <li>
+                        利用实际生活情境和图书故事，向幼儿介绍一些必要的社会行为规则，以及为什么要遵守这些规则。
+                    </li>
+                    <li>
+                        在幼儿园的区域活动中，创设情境，让幼儿体会没有规则的不方便，鼓励他们讨论制定规则并自觉遵守。
+                    </li>
+                    <li>
+                        对幼儿表现出的遵守规则的行为要及时肯定，对违规行为给予纠正。如：幼儿主动为老人让座时要表扬；幼儿损害别人的物品或公共物品时要及时制止并主动赔偿。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                教育幼儿要诚实守信。如：
+                <ul>
+                    <li>
+                        对幼儿诚实守信的行为要及时肯定。
+                    </li>
+                    <li>
+                        允许幼儿犯错误，告诉他改了就好。不要打骂幼儿，以免他因害怕惩罚而说谎。
+                    </li>
+                    <li>
+                        低龄幼儿经常分不清想象和现实，成人不要误认为他是在说谎。
+                    </li>
+                    <li>
+                        发现幼儿说谎时，要反思是否是因自己对幼儿的要求过高过严造成的。如果是，要及时调整自己的行为，同时要严肃地告诉幼儿说谎是不对的。
+                    </li>
+                    <li>
+                        经常给幼儿分配一些力所能及的任务，要求他完成并及时给予表扬，培养他的责任感和认真负责的态度。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/03sh_06.jpg"/>
+</template>
+<template id="suggest_22">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                亲切地对待幼儿，关心幼儿，让他感到长辈是可亲、可近、可信赖的，家庭和幼儿园是温暖的。如：
+                <ul>
+                    <li>
+                        多和孩子一起游戏、谈笑，尽量在家庭和班级中营造温馨的氛围。
+                    </li>
+                    <li>
+                        通过和幼儿一起翻阅照片、讲幼儿成长的故事等，让幼儿感受到家庭和幼儿园的温暖、老师的和蔼可亲，对养育自己的人产生感激之情。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                吸引和鼓励幼儿参加集体活动，萌发集体意识。如：
+                <ul>
+                    <li>
+                        幼儿园和班级里的重大事情和计划，请幼儿集体讨论决定。
+                    </li>
+                    <li>
+                        幼儿园应经常组织多种形式的集体活动，萌发幼儿的集体荣誉感。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                运用幼儿喜闻乐见和能够理解的方式激发幼儿爱家乡、爱祖国的情感。如：
+                <ul>
+                    <li>和幼儿说一说或在地图上找一找自己家所在的省、市、县（区）名称。</li>
+                    <li> 和幼儿一起外出游玩，一起看有关的电视节目或画报等；和他们一起收集有关家乡、祖国各地的风景名胜、著名的建筑、独特物产的图片等，在观看和欣赏的过程中激发幼儿的自豪感和热爱之情。</li>
+                    <li>利用电视节目或参加升旗等活动，向幼儿介绍国旗、国歌以及观看升旗、奏国歌的礼仪。</li>
+                    <li>向幼儿介绍反映中国人聪明才智的发明和创造，激发幼儿的民族自豪感。</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/03sh_07.jpg"/>
+</template>
+<template id="suggest_23">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                经常带幼儿接触大自然，激发其好奇心与探究欲望。如：
+                <ul>
+                    <li>
+                        为幼儿提供一些有趣的探究工具，用自己的好奇心和探究积极性感染和带动幼儿。
+                    </li>
+                    <li>
+                        和幼儿一起发现并分享周围新奇、有趣的事物或现象，一起寻找问题的答案。
+                    </li>
+                    <li>
+                        通过拍照和画图等方式保留和积累有趣的探索与发现。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                真诚地接纳、多方面支持和鼓励幼儿的探索行为。如：
+                <ul>
+                    <li>
+                        认真对待幼儿的问题，引导他们猜一猜、想一想，有条件时和幼儿一起做一些简易的调查或有趣的小实验。
+                    </li>
+                    <li>
+                        容忍幼儿因探究而弄脏、弄乱甚至破坏物品的行为，引导他们活动后做好收拾整理。
+                    </li>
+                    <li>
+                        多为幼儿选择一些能操作、多变化、多功能的玩具材料或废旧材料，在保证安全的前提下，鼓励幼儿拆装或动手自制玩具。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/04kx_01.jpg"/>
+</template>
+<template id="suggest_24">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                有意识地引导幼儿观察周围事物，学习观察的基本方法，培养观察与分类能力。如：
+                <ul>
+                    <li>
+                        支持幼儿自发的观察活动，对其发现表示赞赏。
+                    </li>
+                    <li>
+                        通过提问等方式引导幼儿思考并对事物进行比较观察和连续观察。
+                    </li>
+                    <li>
+                        引导幼儿在观察和探索的基础上，尝试进行简单的分类、概括。如：根据运动方式给动物分类，根据生长环境给植物分类，根据外部特征给物体分类等。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                支持和鼓励幼儿在探究的过程中积极动手动脑寻找答案或解决问题。如：
+                <ul>
+                    <li>
+                        鼓励幼儿根据观察或发现提出值得继续探究的问题，或成人提出有探究意义且能激发幼儿兴趣的问题。如：皮球、轮胎、竹筒等物体滚动时都走直线吗？怎样让橡皮泥球浮在水面上？
+                    </li>
+                    <li>
+                        支持和鼓励幼儿大胆联想、猜测问题的答案，并设法验证。如：玩风车时，鼓励幼儿猜测风车转动方向及速度快慢的原因和条件，并实际验证。
+                    </li>
+                    <li>
+                        支持、引导幼儿学习用适宜的方法探究和解决问题，或为自己的想法收集证据。如：想知道院子里有多少种植物，可以进行实地调查；想知道球在平地上还是在斜坡上滚得快，可以动手试一试；想证明影子的方向与太阳的位置有关，可以做个小实验进行验证等。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                鼓励和引导幼儿学习做简单的计划和记录，并与他人交流分享。如：
+                <ul>
+                    <li>
+                        和幼儿共同制定调查计划，讨论调查对象、步骤和方法等，也可以和幼儿一起设法用图画、箭头等标识呈现计划。
+                    </li>
+                    <li>
+                        鼓励幼儿用绘画、照相、做标本等办法记录观察和探究的过程与结果，注意要让记录有意义，通过记录帮助幼儿丰富观察经验、建立事物之间的联系和分享发现。
+                    </li>
+                    <li>
+                        支持幼儿与同伴合作探究与分享交流，引导他们在交流中尝试整理、概括自己探究的成果，体验合作探究和发现的乐趣。如：一起讨论和分享自己的问题与发现，一起想办法收集资料和验证猜测。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                帮助幼儿回顾自己探究的过程，讨论自己做了什么、怎么做的，结果与计划目标是否一致，分析一下原因以及下一步要怎样做等。
+            </li>
+        </ul>
+    </div>
+    <img src="images/04kx_02.jpg"/>
+</template>
+<template id="suggest_25">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                支持幼儿在接触自然、生活事物和现象中积累有益的直接经验和感性认识。如：
+                <ul>
+                    <li>
+                        和幼儿一起通过户外活动、参观考察、种植和饲养活动，感知生物的多样性和独特性，以及生长发育、繁殖和死亡的过程。
+                    </li>
+                    <li>
+                        给幼儿提供丰富的材料和适宜的工具，支持幼儿在游戏过程中探索并感知常见物质、材料的特性和物体的结构特点。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿在探究中思考，尝试进行简单的推理和分析，发现事物之间明显的关联。如：
+                <ul>
+                    <li>
+                        引导 5 岁以上幼儿关注和思考动植物的外部特征、习性与生活环境对动植物生存的意义。如：兔子的长耳朵具有自我保护的作用，植物种子的形状有助于其传播等。
+                    </li>
+                    <li>
+                        引导幼儿根据常见物质、材料的特性和物体的结构特点，推测和证实它们的用途。如：带轮子的物体方便移动，不同用途的车辆有不同的结构等。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿关注和了解自然、科技产品与人们生活的密切关系，逐渐懂得热爱、尊重、保护自然。如：
+                <ul>
+                    <li>
+                        结合幼儿的生活需要，引导他们体会人与自然、动植物的依赖关系。如：动植物、季节变化与人们生活的关系、常见灾害性天气给人们生产和生活带来的影响等。
+                    </li>
+                    <li>
+                        和幼儿一起讨论常见科技产品的用途和弊端，如：汽车等交通工具给生活带来的方便和对环境的污染等。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/04kx_03.jpg"/>
+</template>
+<template id="suggest_26">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                引导幼儿注意事物的形状特征，尝试用表示形状的词来描述事物，体会描述的生动形象性和趣味性。如：
+                <ul>
+                    <li>
+                        参观游览后，和幼儿一起谈论所看到的事物的形状，鼓励幼儿产生联想，并用自己的语言进行描述。如：熊猫的身体圆圆的，全身好像是一个个圆形组成的。
+                    </li>
+                    <li>
+                        和幼儿交谈或读书讲故事时，适当地运用一些有关形状的词汇来描述事物，如看图片时，和幼儿讨论奥运会场馆的形状，体会为什么有的场馆叫“水立方”，有的叫“鸟巢”。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿感知和体会生活中很多地方都用到数，关注周围与自己生活密切相关的数的信息，体会数可以代表不同的意义。如：
+                <ul>
+                    <li>
+                        和幼儿一起寻找发现生活中用数字作为标识的事物，如电话号码、时钟、日历和商品的价签等。
+                    </li>
+                    <li>
+                        引导幼儿了解和感受数用在不同的地方，表示的意义是不一样的。如：天气预报中表示气温的数代表冷热状况，钟表上的数表明时间的早晚等。
+                    </li>
+                    <li>
+                        鼓励幼儿尝试使用数的信息进行一些简单的推理。如：知道今天是星期五，能推断明天是星期六，爸爸妈妈休息。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                引导幼儿观察发现按照一定规律排列的事物，体会其中的排列特点与规律，并尝试自己创造出新的排列规律。如：
+                <ul>
+                    <li>
+                        和幼儿一起发现和体会按一定顺序排列的队形整齐有序。
+                    </li>
+                    <li>
+                        提供具有重复性旋律和词语的音乐、儿歌和故事，或利用环境中有序排列的图案（如按颜色间隔排列的瓷砖、按形状间隔排列的珠帘等），鼓励幼儿发现和感受其中的规律。
+                    </li>
+                    <li>
+                        引导幼儿体会生活中很多事情都是有一定顺序和规律的，如一周七天的顺序是从周一到周日，一年四季按照春夏秋冬轮回等。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                鼓励和支持幼儿发现、尝试解决日常生活中需要用到数学的问题，体会数学的用处。如：
+                <ul>
+                    <li>
+                        拍球、跳绳、跳远或投沙包时，可通过数数、测量的方法确定名次。
+                    </li>
+                    <li>
+                        讨论春游去哪里玩时，和幼儿商量想去哪里玩？每个想去的地方有多少人？根据统计结果做出决定。滑滑梯时，按照“先来先玩”的规则有序地排队玩。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/04kx_04.jpg"/>
+</template>
+<template id="suggest_27">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                引导幼儿感知和理解事物“量”的特征。如：
+                <ul>
+                    <li>
+                        感知常见事物的大小、多少、高矮、粗细等量的特征，学习使用相应的词汇描述这些特征。
+                    </li>
+                    <li>
+                        结合具体事物让幼儿通过多次比较逐渐理解“量”是相对的。如：小亮比小明高，但比小强矮。
+                    </li>
+                    <li>
+                        收拾物品时，根据情况，鼓励幼儿按照物体量的特征分类整理。如：整理图书时按照大小摆放。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                结合日常生活，指导幼儿学习通过对应或数数的方式比较物体的多少。如：
+                <ul>
+                    <li>
+                        鼓励幼儿在一对一配对的过程中发现两组物体的多少。如：在给桌子上的每个碗配上勺子时，发现碗和勺多少的不同。
+                    </li>
+                    <li>
+                        鼓励幼儿通过数数比较两样东西的多少。如：数一数有多少个苹果、多少个梨，判断苹果和梨哪个多、哪个少。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                利用生活和游戏中的实际情境，引导幼儿理解数概念。如：
+                <ul>
+                    <li>
+                        结合生活需要，和幼儿一起手口一致点数物体，得出物体的总数。
+                    </li>
+                    <li>
+                        通过点数的方式让幼儿体会物体的数量不会因排列形式、空间位置的不同而发生变化。如：鼓励幼儿将一定数量的扣子以不同的形式摆放，体会扣子的数量是不变的。
+                    </li>
+                    <li>
+                        结合日常生活，为幼儿提供“按数取物”的机会，如：游戏时，请幼儿按要求拿出几个球。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                通过实物操作引导幼儿理解数与数之间的关系，并用“加”或“减”的办法来解决问题。如：
+                <ul>
+                    <li>
+                        游戏中遇到让 4 个小动物住进两间房子的问题，或生活中遇到将 5 块饼干分给两个小朋友的问题时，让幼儿尝试不同的分法。
+                    </li>
+                    <li>
+                        鼓励幼儿尝试自己解决生活中的数学问题。如：家里来了 5 位客人，桌子上只有 3 个杯子，还需要几个杯子等。
+                    </li>
+                    <li>
+                        购买少量物品时，有意识地鼓励幼儿参与计算和付款的过程等。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/04kx_05.jpg"/>
+</template>
+<template id="suggest_28">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                用多种方法帮助幼儿在物体与几何形体之间建立联系。如：
+                <ul>
+                    <li>
+                        引导幼儿感受生活中各种物品的形状特征，并尝试识别和描述。如感受和识别盘子、桌子、车轮、地砖等物品的形状特征。
+                    </li>
+                    <li>
+                        鼓励和支持幼儿用积木、纸盒、拼板等各种形状材料进行建构游戏或制作活动。如用长方形的纸盒加两个圆形瓶盖制作“汽车”。
+                    </li>
+                    <li>
+                        收拾整理积木时，引导幼儿体验图形之间的转换。如：两个三角形可组合成一个正方形，两个正方形可组合成一个长方形。
+                    </li>
+                    <li>
+                        引导幼儿注意观察生活物品的图形特征，鼓励他们按形状分类整理物品。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                丰富幼儿空间方位识别的经验，引导幼儿运用空间方位经验解决问题。如：
+                <ul>
+                    <li>
+                        请幼儿取放物体时，使用他能够理解的方位词，如：把桌子下面的东西放到窗台上，把花盆放在大树旁边等。
+                    </li>
+                    <li>
+                        和幼儿一起识别熟悉场所的位置。如：超市在家的旁边，邮局在幼儿园的前面。
+                    </li>
+                    <li>
+                        在体育、音乐和舞蹈活动中，引导幼儿感受空间方位和运动方向。
+                    </li>
+                    <li>
+                        和幼儿玩按指令找宝的游戏。对年龄小的幼儿要求按语言指令寻找，对年龄大些的幼儿可要求按照简单的示意图寻找。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/04kx_06.jpg"/>
+</template>
+<template id="suggest_29">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                和幼儿一起感受、发现和欣赏自然环境和人文景观中美的事物。如：
+                <ul>
+                    <li>
+                        让幼儿多接触大自然，感受和欣赏美丽的景色和好听的声音。
+                    </li>
+                    <li>
+                        经常带幼儿参观园林、名胜古迹等人文景观，讲讲有关的历史故事、传说，与幼儿一起讨论和交流对美的感受。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                和幼儿一起发现美的事物的特征，感受和欣赏美。如：
+                <ul>
+                    <li>
+                        让幼儿观察常见的动植物以及其它物体，引导幼儿用自己的语言、动作等描述它们美的方面，如颜色、形状、形态等。
+                    </li>
+                    <li>
+                        让幼儿倾听和分辨各种声响，引导幼儿用自己的方式来表达他对音色、强弱、快慢的感受。
+                    </li>
+                    <li>
+                        支持幼儿收集喜欢的物品并和他一起欣赏。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/05ys_01.jpg"/>
+</template>
+<template id="suggest_30">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                创造条件让幼儿接触多种艺术形式和作品。如：
+                <ul>
+                    <li>
+                        经常让幼儿接触适宜的、各种形式的音乐作品，丰富幼儿对音乐的感受和体验。
+                    </li>
+                    <li>
+                        和幼儿一起用图画、手工制品等装饰和美化环境。
+                    </li>
+                    <li>
+                        带幼儿观看或共同参与传统民间艺术和地方民俗文化活动，如皮影戏、剪纸和捏面人等。
+                    </li>
+                    <li>
+                        有条件的情况下，带幼儿去剧院、美术馆、博物馆等欣赏文艺表演和艺术作品。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                尊重幼儿的兴趣和独特感受，理解他们欣赏时的行为。如：
+                <ul>
+                    <li>
+                        理解和尊重幼儿在欣赏艺术作品时的手舞足蹈、即兴模仿等行为。
+                    </li>
+                    <li>
+                        当幼儿主动介绍自己喜爱的舞蹈、戏曲、绘画或工艺品时，要耐心倾听并给予积极回应和鼓励。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/05ys_02.jpg"/>
+</template>
+<template id="suggest_31">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                创造机会和条件，支持幼儿自发的艺术表现和创造。
+                <ul>
+                    <li>
+                        提供丰富的便于幼儿取放的材料、工具或物品，支持幼儿进行自主绘画、手工、歌唱、表演等艺术活动。
+                    </li>
+                    <li>
+                        经常和幼儿一起唱歌、表演、绘画、制作，共同分享艺术活动的乐趣。
+                    </li>
+                </ul>
+            </li>
+            <li>
+                营造安全的心理氛围，让幼儿敢于并乐于表达表现。如：
+                <ul>
+                    <li>
+                        欣赏和回应幼儿的哼哼唱唱、模仿表演等自发的艺术活动，赞赏他独特的表现方式。
+                    </li>
+                    <li>
+                        在幼儿自主表达创作过程中，不做过多干预或把自己的意愿强加给幼儿，在幼儿需要时再给予具体的帮助。
+                    </li>
+                    <li>
+                        了解并倾听幼儿艺术表现的想法或感受，领会并尊重幼儿的创作意图，不简单地用“像不像”、“好不好” 等成人标准来评价。
+                    </li>
+                    <li>
+                        展示幼儿的作品，鼓励幼儿用自己的作品或艺术品布置环境。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/05ys_03.jpg"/>
+</template>
+<template id="suggest_32">
+    <div class="tc"><h4>教育建议</h4></div>
+    <div class="blue_line"></div>
+    <div>
+        <ul class="suggest_list">
+            <li>
+                尊重幼儿自发的表现和创造，并给予适当的指导。如：
+                <ul>
+                    <li>
+                        鼓励幼儿在生活中细心观察、体验，为艺术活动积累经验与素材。如，观察不同树种的形态、色彩等。
+                    </li>
+                    <li>
+                        提供丰富的材料，如图书、照片、绘画或音乐作品等，让幼儿自主选择，用自己喜欢的方式去模仿或创作，成人不做过多要求。
+                    </li>
+                    <li>
+                        根据幼儿的生活经验，与幼儿共同确定艺术表达表现的主题，引导幼儿围绕主题展开想象，进行艺术表现。
+                    </li>
+                    <li>
+                        幼儿绘画时，不宜提供范画，特别不应要求幼儿完全按照范画来画。
+                    </li>
+                    <li>
+                        肯定幼儿作品的优点，用表达自己感受的方式引导其提高。如：“你的画用了这么多红颜色，感觉就像过年一样喜庆”、“你扮演的大灰狼声音真像，要是表情再凶一点儿就更好了”等。
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <img src="images/05ys_04.jpg"/>
+</template>
+
+</body>
+</html>

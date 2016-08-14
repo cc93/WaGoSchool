@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition-try</title>
+</head>
+<body>
+
+
+</body>
+</html>
+<!--v-if transition="" 自定义指令 这三者必须一起用-->
+
+<template id="1-notry">
+
+    <script>
+        //Vue.transition('',{}); 不能绑定到元素,
+        Vue.directive('cctrans',{
+            bind: function(){
+                console.log('bind el=' + this.el);
+                var oldClassName = this.el.className;
+                var newClassName = oldClassName + ' ' + 'haha-transition';
+                this.el.className = newClassName;
+            },
+            update: function(val){
+                var name = val.name || 'cctrans';
+                var enter = {};
+                var leave = {};
+                var cssStart = {};
+                var cssEnd = {};
+                if(val.enter !== undefined){
+                    enter = val.enter;
+                    cssStart = val.enter.cssStart || {};
+                    cssEnd = val.enter.cssEnd || {};
+                }
+                if(val.leave !== undefined){
+                    leave = val.leave;
+                }
+
+                Vue.transition(name, {
+                    css: false,
+                    enter: function(el, done){
+                        console.log('Enter');
+                        console.log('transition' + cssEnd.transition);
+                        el.addEventListener('transitionend',done);
+                        CssBuilder.css(el,cssStart);
+                        CssBuilder.css(el,cssEnd);
+                    },
+                    afterEnter: function(el){
+                        console.log('anterEnter');
+                    }
+                });
+            }
+        });
+    </script>
+
+</template>
+<template id="2">
+    <div class="swiper-slide" id="page2" v-if="gv.currentPage==2" transition="page">
+        <img class="title" src="img/01_title.png" alt="" v-if="gv.currentPage==2" transition="title" v-enter
+             name="title" css1="{opacity:0}" css2="{opacity:1;transition:opacity 1s .5s}">
+    </div>
+
+    <script>
+        Vue.directive('enter',{
+            params:['name','css1','css2'],
+            bind: function(){
+
+            },
+            update: function(val){
+                var el = this.el;
+                var name = this.params.name;
+                var css1 = this.params.css1;
+                var css2 = this.params.css2;
+                var css1String = '.'+ name + '-enter' + css1;
+                var css2String = '.'+ name + '-transition' + css2;
+                CssBuilder.createCssString(css2String);     //css中-transition必须在-enter之前
+                CssBuilder.createCssString(css1String);     //css中-transition必须在-enter之前
+            }
+
+        });
+    </script>
+</template>
+
+<!--id=3-->
+<!--组件形式,直接写进 v-if transition trans参数-->
+<!--还能设置组件间的transition-mode-->
+
+<script>
+    /**
+     * vtrans.js v0.0.1
+     * Created by congcong on 16/7/8.
+     */
+    if(typeof _ === 'undefined'){
+        throw new Error('vtrans requires underscore');
+    }
+    if(typeof CssBuilder === 'undefined'){
+        throw new Error('vtrans requires CssBuilder');
+    }
+    if(typeof Vue === 'undefined'){
+        throw new Error('vtrans requires Vue.js');
+    }
+    (function(){
+        Vue.component('vtrans', {
+            template: '<div :class="iClass" :id="iId" v-if="show" :transition="iId" > ' +
+            '<slot>html内容替换到这里</slot> ' +
+            '</div>',
+            props: {
+                class: {
+                    type: String,
+                    default: ''
+                },
+                id: {
+                    type: String,
+                    default: ''
+                },
+                show: {
+                    type: Boolean,
+                    default: true
+                },
+                trans: {
+                    type: String,
+                    default: ''
+                }
+
+            },
+            data: function () {
+                return {
+                    iClass: 'vtrans' + ' ' + this.class,
+                    iId: this.id || ( "vtrans-" + Math.floor(Math.random() * 1000000) ),   //去掉小数,因为样式表的选择器名称不能有小数
+                    transEnd: false  //过渡结束的标志
+                }
+            },
+            computed: {},
+            methods: {
+                stringToObj: function (str) {
+                    eval("var obj = " + str);
+                    return obj;
+                }
+
+            },
+            ready: function () {
+                //如果指定了trans效果,则添加相应的css
+                if(this.trans != ''){
+                    var me = this;
+                    var cssObj = this.stringToObj(this.trans);
+                    var id = this.iId;
+                    var ext = 'px';     //单位
+                    _.each(cssObj, function (v, k) {
+                        CssBuilder.createCssObject('.' + id + '-' + k, v, ext);
+                    });
+                    Vue.transition(id, {
+                        beforeEnter: function (el) {
+                            me.transEnd = false;
+                            console.log('beforeEnter, el= ' + el);
+                        },
+                        afterEnter: function (el) {
+                            me.transEnd = true;
+                        },
+                        beforeLeave: function (el) {
+                            me.transEnd = false;
+                        },
+                        afterLeave: function (el) {
+                            me.transEnd = true;
+                            console.log('afterLeave, el = ' + el);
+                        }
+                    });
+                }
+            }
+        });
+
+    })();
+
+</script>
+
+<script>
+    //20160708
+    //目前最好的方式,指令形式,用正则表达式获取元素上transition的名字,然后cssbuilder添加相应的transition样式,
+    //用指令绑定到原生元素而不用组件另起div封装的好处是不会影响到原生元素的静态布局,如果加了div壳(父级元素)
+    // 可能会子元素影响布局且每次做一个元素的transition都要套一层div太多div也不好.
+    Vue.directive('trans',{
+        update: function(val){
+            var className = this.el.className;
+            var str = className.match(/\b([0-9A-Za-z-]+)-transition\b/g);
+            var transName = RegExp.$1;
+            var cssObj = val;
+            //var id =  "vtrans-" + Math.floor(Math.random() * 1000000);
+            var ext = 'px';     //单位
+            _.each(cssObj, function (v, k) {
+                CssBuilder.createCssObject('.' + transName + '-' + k, v, ext);
+            });
+        }
+    });
+
+</script>

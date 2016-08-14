@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="ccModule">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ccanimate.css">
+    <link rel="stylesheet" href="css/swiper.css">
+
+    <title>WaGoSchool</title>
+</head>
+
+<body ng-controller="ccCtrl">
+<div class="swiper-container page">
+    <div class="swiper-wrapper page">
+        <div class="swiper-slide" id="page1">
+            <img class="bg" src="img/00_bj.jpg">
+            <img class="logo" src="img/00_logo.png">
+            <img class="child" src="img/00_child.png">
+
+            <img class="title_main" src="img/00_title.png" alt="">
+            <img class="title_sub flash" src="img/00_title_01.png" alt="">
+
+            <div class="cloud">
+                <img class="cloud1" v-cloud-float="{ speed:80,left:150 }" src="img/00_cloud_01.png" alt="">
+                <img class="cloud2" v-cloud-float="{ speed:120 }" src="img/00_cloud_02.png" alt="">
+                <img class="cloud3" v-cloud-float="{ speed:60left:300 }" src="img/00_cloud_03.png" alt="">
+            </div>
+
+            <img class="musictoggle" ng-click="musicon = !musicon" ng-show="musicon" src="img/00_music.png" alt="">
+            <img class="musictoggle" ng-click="musicon = !musicon" ng-show="!musicon" src="img/00_music_close.png"
+                 alt="">
+            <img class="menustart swing" src="img/00_btn.png" alt="">
+        </div>
+
+        <div class="swiper-slide" id="page2">
+
+            <img src="img/01_bj.jpg" alt="" class="bg">
+
+            <div class="child">
+            </div>
+
+            <div class="cloud">
+                <img class="cloud1" src="img/00_cloud_01.png" cloud-float1="{speed:80,offset:1,left:150}" alt="">
+                <img class="cloud2" src="img/00_cloud_02.png" cloud-float1="{speed:120,offset:1}" alt="">
+                <img class="cloud3" src="img/00_cloud_03.png" cloud-float1="{speed:60,offset:1,left:300}" alt="">
+            </div>
+
+
+            <img src="img/01_title.png" alt="" class="title">
+            <img src="img/01_hello_01.png" alt="" class="hello">
+            <img src="img/01_hello_02.png" alt="" class="hello1">
+
+
+        </div>
+
+
+        <div class="swiper-slide" id="page3">
+            <div>Page 3</div>
+            <div class="logo"></div>
+            <div class="title"></div>
+        </div>
+
+
+    </div>
+
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+
+
+</div>
+
+
+</body>
+
+
+<script src="js/vue.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/css-builder.0.0.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/cloud-float.js"></script>
+<script>
+    var vm = new Vue({
+        el:'body',
+    });
+</script>
+</html>

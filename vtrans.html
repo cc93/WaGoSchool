@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vtrans</title>
+    <style>
+        @media only screen and (min-width: 640px) {
+            html,
+            body {
+                width: 640px !important;
+            }
+        }
+
+        /* All Style */
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-family: '微软雅黑', simhei, Arial, Helvetica, "Lucida Grande", sans-serif;
+            font-size: 1.5625vw;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            /*自动居中*/
+            overflow: hidden;
+        }
+
+        button {
+            padding: 2px 4px 0px 4px;
+            font-size: 12px;
+            height: 23px;
+            background-color: #ece9d8;
+            border-width: 1px;
+            cursor: pointer;
+        }
+
+        .content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .page {
+            position: absolute;
+            width: 414px;
+            height: 736px;
+        }
+
+        .title {
+            position: absolute;
+            width: 100%;
+            left: 30px;
+            top: 60px;;
+        }
+    </style>
+</head>
+
+<body>
+
+<button @click="previousPage()"> Previous Page</button>
+<button @click="nextPage()"> Next Page</button>
+<span>Current Page: {{currentPage}}</span>
+<div class="content">
+
+    <vtrans v-ref:child class="page" id="page2" :show="currentPage==2"
+            trans="{
+            transition:{transition:'all 1s cubic-bezier(.35,1.43,.56,1.01)',opacity:1,scale:1,'transition-delay': '.2s',},
+            enter:{'transition-delay': '.2s',opacity:0,y:100,scale:1},
+            leave:{'transition-delay': '.0s',opacity:0,y:100,scale:1}}">
+        <h1 style="color: #000;background-color: #4cae4c" style="position: absolute;"> vue 组件 transition 测试 page2 </h1>
+        <img src="img/00_child.png" style="position: absolute;"> </img>
+
+    </vtrans>
+
+    <vtrans v-ref:page2 class="page" :show="(currentPage==2)&&(refs.child.transEnd)" trans="{
+    transition:{transition:'all 1s cubic-bezier(.35,1.43,.56,1.01)',opacity:1,scale:1,'transition-delay': '.2s',},
+    enter:{'transition-delay': '.2s',opacity:0,y:100,scale:1},
+    leave:{'transition-delay': '.0s',opacity:0,y:100,scale:1}}">
+        <img src="img/00_title.png" style="position: absolute;"> </img>
+
+    </vtrans>
+
+    <div class="page" id="page4">
+        <vtrans class="bg" :show="currentPage==4" trans="{
+    transition:{transition:'all 1s cubic-bezier(.35,1.43,.56,1.01)',opacity:1,scale:1,'transition-delay': '.2s',},
+    enter:{'transition-delay': '.2s',opacity:0,y:100,scale:1},
+    leave:{'transition-delay': '.0s',opacity:0,y:100,scale:1}}">
+            <h1 style="color: #000;background-color: #4cae4c" style="position: absolute;"> vue 组件 transition 测试
+                page4</h1>
+            <img src="img/01_bj.jpg" style="position: absolute;"> </img>
+        </vtrans>
+
+        <vtrans class="title" :show="currentPage==4" trans="{
+    transition:{transition:'all 1s cubic-bezier(.35,1.43,.56,1.01)',opacity:1,scale:1,'transition-delay': '2s',},
+    enter:{'transition-delay': '.2s',opacity:0,y:100,scale:1},
+    leave:{'transition-delay': '.0s',opacity:0,y:100,scale:1}}">
+            <img src="img/01_title.png" style="position: absolute;"> </img>
+        </vtrans>
+
+    </div>
+
+
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/css-builder.js"></script>
+<script>
+    Vue.component('vtrans', {
+        template: '<div :class="iClass" :id="iId" v-if="show" :transition="iId" > ' +
+        '<slot>html内容替换到这里</slot> ' +
+        '</div>',
+        props: {
+            class: {
+                type: String,
+                default: ''
+            },
+            id: {
+                type: String,
+                default: ''
+            },
+            show: {
+                type: Boolean,
+                default: true
+            },
+            trans: {
+                type: String,
+                default: ''
+            }
+
+        },
+        data: function () {
+            return {
+                iClass: 'vtrans' + ' ' + this.class,
+                iId: this.id || ( "vtrans-" + Math.floor(Math.random() * 1000000) ),   //去掉小数,因为样式表的选择器名称不能有小数
+                transEnd: false  //过渡结束的标志
+            }
+        },
+        computed: {},
+        methods: {
+            stringToObj: function (str) {
+                eval("var obj = " + str);
+                return obj;
+            }
+
+        },
+        ready: function () {
+            //如果指定了trans效果,则添加相应的css
+            if(this.trans != ''){
+                var me = this;
+                var cssObj = this.stringToObj(this.trans);
+                var id = this.iId;
+                var ext = 'px';     //单位
+                _.each(cssObj, function (v, k) {
+                    CssBuilder.createCssObject('.' + id + '-' + k, v, ext);
+                });
+                Vue.transition(id, {
+                    beforeEnter: function (el) {
+                        me.transEnd = false;
+                        console.log('beforeEnter, el= ' + el);
+                    },
+                    afterEnter: function (el) {
+                        me.transEnd = true;
+                    },
+                    beforeLeave: function (el) {
+                        me.transEnd = false;
+                    },
+                    afterLeave: function (el) {
+                        me.transEnd = true;
+                        console.log('afterLeave, el = ' + el);
+                    }
+                });
+            }
+        }
+    });
+
+    var gv = {
+        currentPage: 1      //默认显示第1页
+    };
+
+    var vm = new Vue({
+        el: 'body',
+        data: {
+            currentPage: gv.currentPage,
+            refs: {}   //创建子组件的引用
+
+        },
+        methods: {
+            nextPage: function () {
+                this.currentPage++;
+                console.log('currentPage = ' + this.currentPage);
+            },
+            previousPage: function () {
+                this.currentPage--;
+                console.log('currentPage = ' + this.currentPage);
+            }
+        },
+        ready: function () {
+            this.refs = this.$refs;     //子组件的引用,方便子组件间的数据传递
+            console.log('ref= ' + this.refs.child.transEnd);
+        }
+    });
+</script>
+</html>

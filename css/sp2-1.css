@@ -1,0 +1,48 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:4bef7c4481b6d74edfd4d41f7efba304:815ba30cf4df108d9444064f53824ead:8564c5454fe63972052fe1644f29692b$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprites"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sp2-1 { display:inline-block; overflow: hidden; background-repeat: no-repeat; background-image: url('../sprite/sp2-1.png'); }
+
+.sp2-1-06_child_01 { width: 551px; height: 731px; background-position: -1px -1px; }
+.sp2-1-06_child_02 { width: 551px; height: 731px; background-position: -1px -734px; }
+.sp2-1-00_child { width: 550px; height: 635px; background-position: -554px -1px; }
+.sp2-1-02_child { width: 640px; height: 474px; background-position: -1106px -1px; }
+.sp2-1-09_child_01 { width: 527px; height: 554px; background-position: -1px -1467px; }
+.sp2-1-07_child_01 { width: 490px; height: 578px; background-position: -554px -638px; }
+.sp2-1-01_blackboard { width: 562px; height: 416px; background-position: -554px -1218px; }
+.sp2-1-10_lid { width: 566px; height: 294px; background-position: -530px -1636px; }
+.sp2-1-01_child { width: 408px; height: 620px; background-position: -1106px -477px; }
+.sp2-1-01_child_01 { width: 408px; height: 620px; background-position: -1118px -1099px; }
+.sp2-1-02_child_02 { width: 197px; height: 414px; background-position: -1516px -477px; }
+.sp2-1-11_btn_10 { width: 301px; height: 97px; background-position: -530px -1932px; }
+.sp2-1-02_child_01 { width: 175px; height: 414px; background-position: -1528px -893px; }
+.sp2-1-02_child_03 { width: 175px; height: 414px; background-position: -1528px -1309px; }
+.sp2-1-11_btn_14 { width: 301px; height: 97px; background-position: -1098px -1721px; }
+.sp2-1-00_btn { width: 299px; height: 89px; background-position: -1098px -1820px; }
+.sp2-1-11_btn_08 { width: 299px; height: 89px; background-position: -833px -1932px; }
+.sp2-1-11_btn_09 { width: 291px; height: 81px; background-position: -1134px -1911px; }
+.sp2-1-01_No { width: 262px; height: 78px; background-position: -1401px -1725px; }
+.sp2-1-01_Get { width: 257px; height: 72px; background-position: -1401px -1805px; }
+.sp2-1-01_hello_01 { width: 137px; height: 83px; background-position: -1427px -1879px; }
+.sp2-1-01_hello_02 { width: 137px; height: 83px; background-position: -1566px -1879px; }
+.sp2-1-00_logo { width: 132px; height: 53px; background-position: -1427px -1964px; }
+.sp2-1-01_logo { width: 132px; height: 53px; background-position: -1561px -1964px; }
+.sp2-1-loading { width: 88px; height: 140px; background-position: -1665px -1725px; }
+.sp2-1-03_child_01 { width: 63px; height: 110px; background-position: -1046px -1099px; }
+.sp2-1-flower { width: 52px; height: 53px; background-position: -1046px -638px; }
+.sp2-1-00_music { width: 48px; height: 48px; background-position: -1046px -693px; }
+.sp2-1-00_music_close { width: 48px; height: 48px; background-position: -1046px -743px; }
+.sp2-1-01_music { width: 48px; height: 48px; background-position: -1046px -793px; }
+.sp2-1-01_music_close { width: 48px; height: 48px; background-position: -1046px -843px; }
+.sp2-1-03_child_02 { width: 55px; height: 32px; background-position: -1134px -1994px; }
+.sp2-1-03_child_03 { width: 55px; height: 32px; background-position: -1191px -1994px; }
+.sp2-1-05_bubble { width: 42px; height: 34px; background-position: -1046px -893px; }

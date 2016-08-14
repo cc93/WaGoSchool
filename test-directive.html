@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test-directive</title>
+    <script src="js/vue.js"></script>
+
+</head>
+<body id="app">
+
+<h1>1.测试 指令绑定,解绑函数,log输出绑定元素的id </h1>
+<button v-fast-click="" id="btn1">btn1</button>
+<button v-fast-click="" id="btn2" @click="p1=!p1">btn2</button>
+<p  v-fast-click="" id="p1" v-if="p1" transition="fade" >这个 p DOM 将要被添加/删除,按下btn2触发</p>
+
+<h1>2.测试 是否能动态添加,删除DOM上的自定义指令</h1>
+<p>不行! 指令的动态添加,删除好像是不可以的,用字符串形式给template的标签中加入也不行,
+    哪些元素需要这个指令必须先写好 HTML加载完成后就看不到这些指令了</p>
+
+
+<h1>3.测试 能否用Vue的'body'实例绑定全局指令</h1>
+<p>Negative! Vue实例的directives选项,components选项只是指明了作用范围,比如el:'body'
+    实例中的directives和components的作用范围就在body下面,再比如使用自定义组件cloud-float
+    其定义的components就是其内部组件,作用域在cloud-float之下</p>
+<!--<p>删除元素上面的自定义指令,在vue的'body'实例中添加这个指令</p>-->
+<!--<button id="btn1">btn1</button>-->
+<!--<button id="btn2" @click="p1=!p1">btn2</button>-->
+<!--<p id="p1" v-if="p1" v-fast-click="">这个 p DOM 将要被添加/删除,按下btn2触发</p>-->
+
+</body>
+
+
+<script>
+
+    Vue.directive('fast-click',{
+        priority:1000,
+        //        params:['options'],
+        bind:function(){
+            console.log("bind to DOMid=" + this.el.getAttribute('id'));
+        },
+        update:function(){},
+        unbind:function(){
+            console.log("unbind from DOMid=" + this.el.getAttribute('id'));
+        }
+    });
+
+    Vue.transition('fade',{
+        css:false,
+        enter: function(el,done){
+            console.log("enter,id = " + el.getAttribute('id'));
+            el.style.transitionDuration = '2s';
+            el.style.color = 'yellow';
+            el.style.opacity = 1;
+            el.addEventListener('transitionend',done);
+
+        },
+        afterEnter: function(el){
+            console.log("DOM已经被插入文档,id = " + el.getAttribute('id'));
+            el.style.color = 'red';
+//            el.style.transitionDuration = '2s';
+        },
+        leave: function(el,done){
+            console.log("leave, id = " + el.getAttribute('id'));
+            el.style.transitionDuration = '2s';
+            el.style.color = 'blue';
+            el.style.opacity = 0;
+            el.addEventListener('transitionend',done);
+
+        }
+    });
+
+    new Vue({
+        el: '#app',
+        data: {
+            p1: true
+        },
+        methods: {
+            notify: function (val) {
+                alert(val);
+            },
+            addDOM: function () {
+
+            }
+        },
+        ready: function(){
+
+        }
+
+    });
+
+</script>
+</html>
+
+

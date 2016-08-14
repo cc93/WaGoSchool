@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vclip</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="img/sprite.css">
+    <style>
+        .vclip-container {
+            position: relative;
+            overflow: hidden;
+            /*border: 2px solid black;*/
+            margin: 0 auto;
+        }
+
+        .vclip-container-size {
+            width: 180px;
+            height: 300px;
+        }
+
+        .vclip-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .vclip-frame {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Microsoft YaHei', Arial, Verdana, Geneva, sans-serif;
+            font-size: 14px;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #control-pannel {
+            width: 400px;
+            text-align: center;
+            margin: 10px auto;
+
+        }
+
+        button {
+            width: 200px;
+            margin: 5px;
+            background-color: skyblue;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 0.3rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            outline: none;
+            appearance: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #ddd;
+            color: #333;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            transform: scale(1);
+        }
+
+        .set-speed, .go-frame {
+            margin: 5px;
+            background-color: skyblue;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 0.3rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            outline: none;
+            appearance: none;
+            border: none;
+        }
+
+        #input-speed, #input-frame {
+            background-color: lightskyblue;
+            width: 50px;
+            color: white;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: none;
+        }
+
+        #input-speed:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .vclip1 {
+            width: 400px;
+            height: 600px;
+        }
+
+        .frame1 {
+            width: 180px;
+            background-color: lightgreen;
+
+        }
+
+        .frame2 {
+            width: 130px;
+            height: 300px;;
+            background-color: lightsalmon;
+
+        }
+
+        #frame3 {
+            width: 180px;
+
+            background-color: lightblue;
+        }
+
+        #frame4 {
+            width: 200px;
+            height: 400px;
+            background-color: lightcoral;
+        }
+
+        /*.child {*/
+        /*position: absolute;*/
+        /*left:0;*/
+        /*bottom:0;*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+
+<vclip class="vclip1" :resize="true" :play-section="[]" :api="vclip1.api"
+       :play.sync="vclip1.play" :loop="vclip1.loop" :speed.sync="vclip1.speed"
+       @on-frame-changed="frameChanged"
+>
+
+    <div class="vclip-frame">
+        <div class="icon-02_child_01"></div>
+    </div>
+
+    <div class="vclip-frame ">
+        <img class=" child" src="go/10_child_02.png">
+    </div>
+
+    <div class="vclip-frame">
+        <div class="icon-02_child_02"></div>
+    </div>
+
+    <div class="vclip-frame">
+        <div class="icon-02_child_03"></div>
+    </div>
+
+    <!--<div class="vclip-frame "><img class=" child" src="go/10_child_01.png"></div>-->
+    <!--<div class="vclip-frame "><img class=" child" src="go/10_child_02.png"></div>-->
+    <!--<div class="vclip-frame"><img class=" child" src="go/10_child_03.png"></div>-->
+    <!--<div class="vclip-frame"><img class=" child" src="go/10_child_04.png"></div>-->
+
+
+</vclip>
+<table id="control-pannel">
+    <colgroup>
+        <col style="width: 200px">
+        <col style="width: 200px">
+    </colgroup>
+    <tr>
+        <td colspan="2">
+            currentFrame: {{vclip1.currentFrame}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button @click="vclip1.play = !vclip1.play">play:{{vclip1.play}}</button>
+        </td>
+        <td>
+            <button @click="vclip1.loop = !vclip1.loop">loop:{{vclip1.loop}}</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button @click="vclip1.api.prevFrame()">prevFrame</button>
+        </td>
+        <td>
+            <button @click="vclip1.api.nextFrame()">nextFrame</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="set-speed">
+                <label for="input-speed">speed:</label>
+                <input id="input-speed" name="speed" type="number" :value="vclip1.speed" v-model="input.speed"
+                       @change="vclip1.speed=parseInt(input.speed);" lazy>
+            </div>
+        </td>
+        <td>
+            <div class="go-frame">
+                <label for="input-frame">goFrame:</label>
+                <input id="input-frame" name="frame" type="number" v-model="input.frame"
+                       @change="vclip1.api.goFrame( parseInt(input.frame))" lazy>
+            </div>
+        </td>
+    </tr>
+</table>
+
+</body>
+
+
+<script src="js/vue.js"></script>
+<script type="x/template" id="vclip-template">
+    <div :class="['vclip-container',class == ''? 'vclip-container-size': class]" v-el:container>
+        <div class="vclip-wrapper"
+             v-el:wrapper
+             :style="{transform: 'translate3d(' + translateX + 'px, 0, 0)'}"
+        >
+            <slot></slot>
+        </div>
+    </div>
+</script>
+<script>
+    Vue.component('vclip', {
+        template: '#vclip-template',
+        props: {
+            class: {
+                type: String,
+                default: ''
+            },
+            play: {
+                type: Boolean,
+                default: true
+            },
+            speed: {
+                type: Number,
+                default: 300
+            },
+            loop: {
+                type: Boolean,
+                default: true
+            },
+            resize: {
+                type: Boolean,
+                default: false
+            },
+            playSection: {
+                type: Array,
+                default: function () {
+                    return [];
+                }
+            },
+            //API
+            api: {
+                type: Object,
+                default: function () {
+                    return {};
+                }
+            }
+
+        },
+        data: function () {
+            return {
+                eles: [],
+                frameWidth: 0,
+                frameHeight: 0,
+                totalFrames: 0,
+                currentFrame: 0,
+                lastFrame: 0,
+                frames: [],
+                playFrames: [],
+                playIndex: 0,   //从播放列表playFrames[]数组中的第一项index0开始播
+                translateX: 0
+            }
+        },
+        methods: {
+            initData: function () {
+                //totalFrames
+                this.eles = this.$els.wrapper.children;
+                this.totalFrames = this.eles.length;
+                //frameSize
+                this.frameWidth = this.$els.container.clientWidth;
+                this.frameHeight = this.$els.container.clientHeight;
+                //playFrames
+                if (this.playSection.length == 0) { //如果未设置palySection,则默认play所有Frames
+                    this.playSection = [1, this.totalFrames];
+                }
+                this.setPlayFrames(this.playSection);
+            },
+            setPlayFrames: function (playSection) {
+                if (playSection.length == 1) {
+                    //[2]
+                    this.playFrames[0] = playSection[0];
+                }
+                if (playSection.length == 2) {
+                    //[2,3]
+                    //[2,5]
+                    for (var i = playSection[0]; i <= playSection[1]; i++) {
+                        this.playFrames.push(i);
+                    }
+                }
+                if (playSection.length > 2) {
+                    //[2,3,4,8,10]
+                    this.playFrames = playSection;
+                }
+
+            },
+            goFrame: function (framePage) {
+                if (framePage >= 1 && framePage <= this.totalFrames) {
+                    this.currentFrame = framePage;
+                    this.translateX = -(framePage - 1) * this.frameWidth;
+                    this.$emit('on-frame-changed', this.currentFrame);
+                } else {
+                    throw new Error('out of range!');
+                }
+            },
+            nextFrame: function () {
+                if (this.currentFrame >= this.totalFrames) {
+                    this.goFrame(1);
+                } else {
+                    this.goFrame(this.currentFrame + 1);
+                }
+            },
+            prevFrame: function () {
+                if (this.currentFrame <= 1) {
+                    this.goFrame(this.totalFrames);
+                } else {
+                    this.goFrame(this.currentFrame - 1);
+                }
+            },
+            startPlay: function () {
+                var me = this;
+                if (me.loop) {
+                    me.intervalId = setInterval(function () {
+                        if (me.playIndex >= me.playFrames.length) {
+                            me.playIndex = 0;
+                        }
+                        me.goFrame(me.playFrames[me.playIndex]);
+                        me.playIndex++;
+                    }, me.speed);
+                } else {
+                    me.intervalId = setInterval(function () {
+                        if (me.playIndex >= me.playFrames.length) {
+                            clearInterval(me.intervalId);
+                            me.play = false;
+                            return;
+                        }
+                        me.goFrame(me.playFrames[me.playIndex]);
+                        me.playIndex++;
+                    }, me.speed);
+                }
+                this.$emit('on-play-start', this.currentFrame);
+                console.log('on-play-start');
+                return true;
+            },
+            stopPlay: function () {
+                if (this.intervalId) {
+                    clearInterval(this.intervalId);
+
+                }
+                this.$emit('on-play-stop', this.currentFrame);
+                console.log('on-play-stop');
+                return true;
+            },
+            resizeContent: function () {
+                var frameEles = null;
+                var maxWidth = 0, maxHeight = 0, ratio = 0;
+                var frameRatio = this.frameHeight / this.frameWidth;
+                var scale = 0, newWidth = 0, newHeight = 0;
+                for (var i = 0; i < this.totalFrames; i++) {
+                    frameEles = this.eles[i].children;
+                    maxWidth = 0;
+                    maxHeight = 0;
+                    ratio = 0;
+                    for (var j = 0; j < frameEles.length; j++) {
+                        if (frameEles[j].clientWidth > maxWidth) {
+                            maxWidth = frameEles[j].clientWidth;
+                        }
+                        if (frameEles[j].clientHeight > maxHeight) {
+                            maxHeight = frameEles[j].clientHeight;
+                        }
+                    }
+                    ratio = maxHeight / maxWidth;
+                    newWidth = this.frameWidth;
+                    if (ratio > frameRatio) {       // height is bigger, then decided by frameHeight
+                        newHeight = this.frameHeight;
+                        newWidth = newHeight / ratio;
+                    } else {
+                        newWidth = this.frameWidth;
+                        newHeight = newWidth * ratio;
+                    }
+                    scale = newWidth / maxWidth;
+                    this.eles[i].style.transform  = 'scale(' + scale + ')';
+                }
+                this.$emit('on-resized');
+            },
+            exposeAPI: function () {          //暴露出想给父组件使用的属性和方法
+                this.api.goFrame = this.goFrame;
+                this.api.nextFrame = this.nextFrame;
+                this.api.prevFrame = this.prevFrame;
+            }
+
+        },
+        ready: function () {
+            this.initData();
+            this.exposeAPI();
+            if (this.resize) {
+                this.resizeContent();
+            }
+            if (this.play) {
+                this.startPlay();
+            }
+
+        },
+        watch: {
+            'play': function (val) {
+                if (val) {
+                    this.startPlay();
+                } else {
+                    this.stopPlay();
+                }
+                this.$emit('on-play-changed', this.play);
+            },
+            'speed': function (val) {
+                if (this.play) {             //如果play正在进行,则重启interval才能使新的speed生效
+                    this.stopPlay();
+                    this.startPlay();
+                }
+                this.$emit('on-speed-changed', this.speed);
+            }
+        }
+    });
+    //播放窗口大小containerSize由样式类自行设定;
+    //帧的大小继承父元素100%, 默认scale=false,内容自动居中,小图完全显示,大图显示部分,不会缩放
+    //scale=true,开启自动缩放,保持长宽比的缩放,即不论帧内容的长或宽 大于还是小于 容器,都会被缩放,缩放后总会有长或宽等于容器
+    //广播事件
+
+    //改进:
+    //1.自动检测最大帧尺寸,设定容器大小containerSize
+    //2.插入帧,删除帧
+
+
+    new Vue({
+        el: 'body',
+        data: {
+            vclip1: {
+                currentFrame: 1,
+                play: true,
+                loop: true,
+                speed: 500,          //api属性将在子组件中赋值
+                api: {}
+            },
+            input: {}
+        },
+        methods: {
+            frameChanged: function (currentFrame) {
+                this.vclip1.currentFrame = currentFrame;
+            }
+        },
+        ready: function () {
+        }
+    });
+</script>
+</html>

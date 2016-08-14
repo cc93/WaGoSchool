@@ -1,0 +1,26 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:4bef7c4481b6d74edfd4d41f7efba304:815ba30cf4df108d9444064f53824ead:8564c5454fe63972052fe1644f29692b$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprites"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sp4-1 { display:inline-block; overflow: hidden; background-repeat: no-repeat; background-image: url('../sprite/sp4-1.png'); }
+
+.sp4-1-01_ray { width: 552px; height: 827px; background-position: -1px -1px; }
+.sp4-1-02_insignia { width: 447px; height: 345px; background-position: -555px -1px; }
+.sp4-1-04_insignia { width: 447px; height: 325px; background-position: -1004px -1px; }
+.sp4-1-09_insignia { width: 447px; height: 318px; background-position: -1004px -328px; }
+.sp4-1-07_insignia { width: 447px; height: 311px; background-position: -555px -348px; }
+.sp4-1-03_insignia { width: 447px; height: 300px; background-position: -1004px -648px; }
+.sp4-1-05_insignia { width: 447px; height: 300px; background-position: -555px -661px; }
+.sp4-1-11_copy_07_8_10_big { width: 93px; height: 89px; background-position: -1px -830px; }
+.sp4-1-11_copy_06_6_8_smil { width: 54px; height: 54px; background-position: -96px -830px; }
+.sp4-1-06_insignia { width: 447px; height: 300px; background-position: -1453px -1px; }
+.sp4-1-08_insignia { width: 447px; height: 300px; background-position: -1453px -303px; }
+.sp4-1-10_insignia { width: 447px; height: 300px; background-position: -1453px -605px; }

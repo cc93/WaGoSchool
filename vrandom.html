@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vrandom</title>
+</head>
+<body>
+
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+    // properties: 数量,name duration timeFn delay loop
+    // all properties have range
+    //range: [] random
+    //[3]  certain
+    //[3,7] range random
+    Vue.component('vrandom',{
+        props:{
+            count:{
+                type:Number,
+                default:1
+            },
+            range: {
+                type:Array,
+                default:function(){
+                    return [];
+                }
+            },
+            duration: {
+
+            },
+            timeFn: {
+
+            },
+            delay: {
+
+            },
+            path: {
+                type: Object,
+                default: function(){
+                    return {
+
+                    }
+                }
+
+            },
+            scale: {
+                type: Object,
+                default: function(){
+                    return {
+                        range:[],
+                    }
+                }
+
+            },
+            rotate: {
+
+            }
+        },
+        data: function(){
+            return {
+            }
+        },
+        computed: {
+            'mScale': function(){
+
+            }
+        },
+        ready: function(){
+            this.initData();
+        },
+        methods: {
+            initData: function(){
+
+            }
+
+        }
+
+    });
+
+
+</script>
+</html>

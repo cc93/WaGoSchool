@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="img/sprite.css">
+    <link rel="stylesheet" href="css/index-1.1.css">
+
+    <title>index-1.1</title>
+</head>
+
+<body >
+
+<swiper class="pages" v-resize-fill v-ref:swPages
+        direction="vertical"
+        :mousewheel-control="true"
+        :pagination-visible="true"
+        :pagination-clickable="true"
+        @slide-change-start="onSlideChangeStart">
+    <div class="swiper-slide page" id="page1">
+        <img class="bg" src="img/00_bj.jpg">
+        <div class="child-1 icon-00_child"></div>
+        <div class="title-1 icon-00_title"></div>
+        <div class="title-1-1 flash icon-00_title_01 "></div>
+        <div class="btn-1 swing icon-00_btn"></div>
+    </div>
+
+    <div class="swiper-slide page" id="page2">
+        <img class="bg" src="img/01_bj.jpg">
+        <div class="title-2 icon-01_title"></div>
+        <div class="hello-2 icon-01_hello_01"></div>
+        <div class="hello-2-1 icon-01_hello_02"></div>
+        <!--<vclip class="vclip-child-2" :speed="100">-->
+            <!--<div class="vclip-frame">-->
+               <!--<img src="go/01_child.png">-->
+            <!--</div>-->
+            <!--<div class="vclip-frame">-->
+                <!--<img src="go/01_child_01.png">-->
+            <!--</div>-->
+        <!--</vclip>-->
+
+    </div>
+
+    <div class="swiper-slide page" id="page3">
+        <img class="bg" src="img/02_bj.jpg">
+        <div class="title-3 icon-02_title"></div>
+        <div class="child-3 icon-02_child"></div>
+        <!--<vclip class="vclip-child-3" :speed="300">-->
+            <!--<div class="vclip-frame">-->
+                <!--<div class="icon-02_child_01"></div>-->
+            <!--</div>-->
+            <!--<div class="vclip-frame">-->
+                <!--<div class=" icon-02_child_02"></div>-->
+            <!--</div>-->
+            <!--<div class="vclip-frame">-->
+                <!--<div class=" icon-02_child_03"></div>-->
+            <!--</div>-->
+        <!--</vclip>-->
+    </div>
+
+</swiper>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/css-builder.js"></script>
+<script src="js/vue-swiper.js"></script>
+<script src="js/index-1.1.js"></script>
+
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/vue-popup.css">
+    <link rel="stylesheet" href="css/vuedemo.css">
+    <link rel="stylesheet" href="css/vuedemoanimate.css">
+
+    <title>WaGoSchool</title>
+</head>
+
+<body>
+
+
+<div class="swiper-container page"  id="page">
+
+    <div class="swiper-wrapper page">
+
+        <div class="swiper-slide" id="page1" >
+            <img class="bg"  src="img/00_bj.jpg">
+            <img class="child" src="img/00_child.png">
+
+            <img class="title_main flash" src="img/00_title.png" alt="">
+            <img class="title_sub flash" src="img/00_title_01.png" alt="">
+
+            <div class="cloud" v-if="currentPage==1">
+                <img class="cloud1" src="img/00_cloud_01.png" v-cloud-float="{speed:80,left:150}" alt="">
+                <img class="cloud2" src="img/00_cloud_02.png" v-cloud-float="{speed:120}" alt="">
+                <img class="cloud3" src="img/00_cloud_03.png" v-cloud-float="{speed:60,left:300}" alt="">
+            </div>
+
+            <img class="btn-1-start btncc swing" @click="nextPage" v-fastclick src="img/00_btn.png" alt="">
+        </div>
+
+        <div class="swiper-slide" id="page2">
+            <img class="bg" src="img/01_bj.jpg">
+
+            <div class="cloud" v-if="currentPage==2">
+                <img class="cloud1" src="img/00_cloud_01.png" v-cloud-float="{speed:80,left:150}" alt="">
+                <img class="cloud2" src="img/00_cloud_02.png" v-cloud-float="{speed:120}" alt="">
+                <img class="cloud3" src="img/00_cloud_03.png" v-cloud-float="{speed:60,left:300}" alt="">
+            </div>
+
+
+            <img class="title-2" src="img/01_title.png" v-if="currentPage==2" transition="title-2" v-trans="{
+                 transition:{opacity:1,transition:'all 2s .2s'},
+                 enter:{opacity:0,y:30},
+                 leave:{opacity:0,y:30},
+                 ext:'%'}">
+
+            <div v-if="currentPage==2" transition="child-2" v-trans="{
+                 transition:{opacity:1,transition:'opacity 2s .5s'},
+                 enter:{opacity:0},leave:{opacity:0},ext:'%'}">
+                <img class="child-2" v-clip-loop="{id:'child_2',index:1,speed:200,count:2}" src="img/01_child.png">
+                <img class="child-2" v-clip-loop="{id:'child_2',index:2}" src="img/01_child_01.png">
+            </div>
+
+            <div v-if="currentPage==2" transition="hello-2" v-trans="{
+                transition:{opacity:1,transition:'opacity 2s .5s'},
+                enter:{opacity:0},
+                leave:{opacity:0},
+                ext:'%'}">
+                <img class="hello-2-1" src="img/01_hello_01.png">
+                <img class="hello-2-2" src="img/01_hello_02.png">
+            </div>
+
+
+            <div class="quiz" v-if="currentPage==2 && quizEnd==false" transition="quiz-2" v-trans="{
+                 transition:{opacity:1,transition:'opacity .5s 1.5s'},
+                 enter:{opacity:0},
+                 leave:{opacity:0,transition:'opacity .5s .1s'},
+                 ext:'%'}">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/01_copy_01.png"
+                     v-if="currentPage==2 && quizEnd==false" transition="copy01-2" v-trans="{
+                     transition:{opacity:1,transition:'opacity 1s 2s'},
+                     enter:{opacity:0},
+                     leave:{opacity:0,transition:'opacity .5s .1s'}}">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==2 && quizEnd==false" transition="copy02-2"
+                     v-trans="{
+                     transition:{opacity:1,transition:'opacity 1s 2.5s'},
+                     enter:{opacity:0},
+                     leave:{opacity:0,transition:'opacity .5s .1s'}}">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==2 && quizGet==true" transition="quizGet-2"
+                 v-trans="{
+                 transition:{opacity:1,transition:'opacity 2s .1s'},
+                 enter:{opacity:0},
+                 leave:{opacity:0,transition:'opacity .1s 0s'},
+                 ext:'%'}">
+                <img class="prize" src="img/01_insignia.png"
+                     v-if="currentPage==2 && quizGet==true" transition="prize-2" v-trans="{
+                     transition:{opacity:1,transition:'all 1s .2s'},
+                     enter:{opacity:0,scale:.2},
+                     leave:{opacity:0,scale:.2}}">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==2 && quizGet==true" transition="ray-2" v-trans="{
+                     transition:{opacity:1,transition:'all 2s .2s'},
+                     enter:{opacity:0.8,left:0,rotate:10},
+                     leave:{opacity:0},
+                     ext:'%'}">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==2 && quizGet==true" transition="copy03-2" v-trans="{
+                     transition:{opacity:1,transition:'opacity 2s .6s'},
+                     enter:{opacity:0},
+                     leave:{opacity:0,transition:'opacity .5s .1s'}}">
+                <img class="copy04" src="img/01_copy_04.png"
+                     v-if="currentPage==2 && quizGet==true" transition="copy04-2" v-trans="{
+                     transition:{opacity:1,transition:'opacity 2s 1.1s'},
+                     enter:{opacity:0},
+                     leave:{opacity:0,transition:'opacity .5s .1s'}}">
+            </div>
+
+        </div>
+
+        <div class="swiper-slide" id="page3">
+            <img class="bg" src="img/02_bj.jpg">
+
+            <img class="title-3" src="img/02_title.png" v-if="currentPage==3" transition="title-2">
+
+            <div v-if="currentPage==3" transition="child-3"
+                 v-trans="{
+                 transition:{opacity:1,transition:'opacity 1.5s .5s'},
+                 enter:{opacity:0},
+                 leave:{opacity:0,transition:'opacity 0s 0s'}}">
+                <img class="child-3" src="img/02_child.png">
+                <img class="speaker-3" v-clip-loop="{id:'speaker_3',speed:300,count:3,index:1}"
+                     src="img/02_child_01.png" alt="">
+                <img class="speaker-3" v-clip-loop="{id:'speaker_3',index:2}" src="img/02_child_02.png" alt="">
+                <img class="speaker-3" v-clip-loop="{id:'speaker_3',index:3}" src="img/02_child_03.png" alt="">
+            </div>
+
+            <div class="quiz" v-if="currentPage==3 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/02_copy_01.png"
+                     v-if="currentPage==3 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==3 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==3 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/02_insignia.png"
+                     v-if="currentPage==3 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==3 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==3 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/01_copy_04.png"
+                     v-if="currentPage==3 && quizGet==true" transition="copy04-2">
+            </div>
+
+        </div>
+
+        <div class="swiper-slide" id="page4">
+            <img class="bg" src="img/03_bj.jpg">
+
+            <img class="title-3" src="img/03_title.png" v-if="currentPage==4" transition="title-2">
+
+            <div v-if="currentPage==4">
+                <img class="child-4-mouth1" v-clip-loop="{id:'child_4',index:1,speed:300,count:2,play:true }"
+                     src="img/03_child_02.png" alt="">
+                <img class="child-4-mouth2" v-clip-loop="{id:'child_4',index:2 }" src="img/03_child_03.png" alt="">
+            </div>
+
+            <div class="quiz" v-if="currentPage==4 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/03_copy_01.png"
+                     v-if="currentPage==4 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==4 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==4 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/03_insignia.png"
+                     v-if="currentPage==4 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==4 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==4 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/03_copy_04.png"
+                     v-if="currentPage==4 && quizGet==true" transition="copy04-2">
+            </div>
+
+
+        </div>
+
+        <div class="swiper-slide" id="page5">
+            <img class="bg" src="img/04_bj.jpg">
+
+            <img class="title-3" src="img/04_title.png" v-if="currentPage==5" transition="title-2">
+
+            <div v-if="currentPage==5" transition="child-3"
+                 v-trans="{
+                 transition:{opacity:1,transition:'opacity 1.5s .5s'},
+                 enter:{opacity:0},
+                 leave:{opacity:0,transition:'opacity 0s 0s'}}">
+                <img class="child-5" v-clip-loop="{id:'child_5',speed:600,count:2,play:true,index:1}"
+                     src="img/04_child_01.png">
+                <img class="child-5" v-clip-loop="{id:'child_5',index:2 }" src="img/04_child_02.png" alt="">
+            </div>
+
+            <div class="quiz" v-if="currentPage==5 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/04_copy_01.png"
+                     v-if="currentPage==5 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==5 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==5 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/04_insignia.png"
+                     v-if="currentPage==5 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==5 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==5 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/04_copy_04.png"
+                     v-if="currentPage==5 && quizGet==true" transition="copy04-2">
+            </div>
+        </div>
+
+        <div class="swiper-slide" id="page6">
+            <img class="bg" src="img/05_bj.jpg">
+
+            <img class="title-3" v-if="currentPage==6" transition="title-2" src="img/05_title.png">
+
+            <div v-if="currentPage==6">
+                <img class="bubble-6" v-clip-loop="{id:'bubble_6',index:1,count:2,speed:300,play:true}"
+                     src="img/05_bubble.png">
+                <div class="bubble-6" v-clip-loop="{id:'bubble_6',index:2 }"></div>
+            </div>
+
+            <div class="quiz" v-if="currentPage==6 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/05_copy_01.png"
+                     v-if="currentPage==6 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==6 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==6 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/05_insignia.png"
+                     v-if="currentPage==6 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==6 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==6 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/05_copy_04.png"
+                     v-if="currentPage==6 && quizGet==true" transition="copy04-2">
+            </div>
+        </div>
+
+        <div class="swiper-slide" id="page7">
+            <img class="bg" src="img/06_bj.jpg">
+
+            <img class="title-7" v-if="currentPage==7" transition="title-2" src="img/06_title.png">
+
+
+            <div v-if="currentPage==7">
+                <img class="child-7" v-clip-loop="{id:'child_7',index:1,count:2,speed:300,play:true}"
+                     src="img/06_child_01.png">
+                <img class="child-7" v-clip-loop="{id:'child_7',index:2 }" src="img/06_child_02.png">
+            </div>
+
+
+            <div class="quiz" v-if="currentPage==7 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/06_copy_01.png"
+                     v-if="currentPage==7 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==7 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==7 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/06_insignia.png"
+                     v-if="currentPage==7 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==7 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==7 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/06_copy_04.png"
+                     v-if="currentPage==7 && quizGet==true" transition="copy04-2">
+            </div>
+        </div>
+
+        <div class="swiper-slide" id="page8">
+            <img class="bg" src="img/07_bj.jpg">
+
+            <img class="title-8" v-if="currentPage==8" transition="title-2" src="img/07_title.png">
+
+            <div v-if="currentPage==8">
+                <img class="child-8" v-clip-loop="{id:'child_8',index:1,count:3,speed:300,play:true}"
+                     src="img/07_child_01.png">
+                <img class="child-8" v-clip-loop="{id:'child_8',index:2 }" src="img/07_child_02.png">
+                <img class="child-8" v-clip-loop="{id:'child_8',index:3 }" src="img/07_child_03.png">
+            </div>
+
+            <div class="quiz" v-if="currentPage==8 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/07_copy_01.png"
+                     v-if="currentPage==8 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==8 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==8 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/07_insignia.png"
+                     v-if="currentPage==8 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==8 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==8 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/07_copy_04.png"
+                     v-if="currentPage==8 && quizGet==true" transition="copy04-2">
+            </div>
+        </div>
+
+        <div class="swiper-slide" id="page9">
+            <img class="bg" src="img/08_bj.jpg">
+
+            <img class="title-8" v-if="currentPage==9" transition="title-2" src="img/08_title.png">
+
+            <div v-if="currentPage==9">
+                <img class="child-9" v-clip-loop="{id:'child_9',index:1,count:3,speed:300}"
+                     src="img/08_child_01.png">
+                <img class="child-9" v-clip-loop="{id:'child_9',index:2 }" src="img/08_child_02.png">
+                <img class="child-9" v-clip-loop="{id:'child_9',index:3 }" src="img/08_child_03.png">
+            </div>
+
+            <div class="quiz" v-if="currentPage==9 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/08_copy_01.png"
+                     v-if="currentPage==9 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==9 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==9 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/08_insignia.png"
+                     v-if="currentPage==9 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==9 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==9 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/08_copy_04.png"
+                     v-if="currentPage==9 && quizGet==true" transition="copy04-2">
+            </div>
+        </div>
+
+        <div class="swiper-slide" id="page10">
+            <img class="bg" src="img/09_bj.jpg">
+
+            <img class="title-8" v-if="currentPage==10" transition="title-2" src="img/09_title.png">
+
+            <div v-if="currentPage==10">
+                <img class="child-10" v-clip-loop="{id:'child_10',index:1,count:3,speed:300}"
+                     src="img/09_child_01.png">
+                <img class="child-10" v-clip-loop="{id:'child_10',index:2 }" src="img/09_child_02.png">
+                <img class="child-10" v-clip-loop="{id:'child_10',index:3 }" src="img/09_child_03.png">
+            </div>
+
+            <div class="quiz" v-if="currentPage==10 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/09_copy_01.png"
+                     v-if="currentPage==10 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==10 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==10 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/09_insignia.png"
+                     v-if="currentPage==10 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==10 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==10 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/09_copy_04.png"
+                     v-if="currentPage==10 && quizGet==true" transition="copy04-2">
+            </div>
+        </div>
+
+        <div class="swiper-slide" id="page11">
+            <img class="bg" src="img/10_bj.jpg">
+
+            <img class="title-8" v-if="currentPage==11" transition="title-2" src="img/10_title.png">
+
+            <div v-if="currentPage==11">
+                <img class="lid-11" src="img/10_lid.png">
+                <img class="child-11" v-clip-loop="{id:'child_11',index:1,count:4,speed:300}"
+                     src="img/10_child_01.png">
+                <img class="child-11" v-clip-loop="{id:'child_11',index:2 }" src="img/10_child_02.png">
+                <img class="child-11" v-clip-loop="{id:'child_11',index:3 }" src="img/10_child_03.png">
+                <img class="child-11" v-clip-loop="{id:'child_11',index:4 }" src="img/10_child_04.png">
+            </div>
+
+            <div class="quiz" v-if="currentPage==11 && quizEnd==false" transition="quiz-2">
+                <img class="blackboard" src="img/01_blackboard.png">
+
+                <img class="copy01" src="img/10_copy_01.png"
+                     v-if="currentPage==11 && quizEnd==false" transition="copy01-2">
+                <img class="copy02" src="img/01_copy_02.png"
+                     v-if="currentPage==11 && quizEnd==false" transition="copy02-2">
+                <img class="btn-get btncc" @click="quizGetFn" v-fastclick src="img/01_Get.png">
+                <img class="btn-no btncc" @click="nextPage" v-fastclick src="img/01_No.png">
+            </div>
+
+            <div class="quizGet" @click="nextPage" v-if="currentPage==11 && quizGet==true" transition="quizGet-2">
+                <img class="prize" src="img/10_insignia.png"
+                     v-if="currentPage==11 && quizGet==true" transition="prize-2">
+                <img class="prize-ray" src="img/01_ray.png"
+                     v-if="currentPage==11 && quizGet==true" transition="ray-2">
+                <img class="copy03" src="img/01_copy_03.png"
+                     v-if="currentPage==11 && quizGet==true" transition="copy03-2">
+                <img class="copy04" src="img/10_copy_04.png"
+                     v-if="currentPage==11 && quizGet==true" transition="copy04-2">
+            </div>
+        </div>
+
+        <div class="swiper-slide" id="page12">
+            <img class="bg" src="img/11_bj.jpg">
+
+            <img class="copy-12-1" v-if="currentPage==12" transition="copy-12-1" src="img/11_copy_01.png"
+                 v-trans="{
+                 transition:{opacity:1,transition:'all 1s .2s',animation:'scaleUp 0.6s ease infinite'},
+                 enter:{opacity:0,y:30},
+                 leave:{opacity:0,y:30},
+                 ext:'%'}">
+
+            <div v-if="currentPage==12" transition="copy-12-2"
+                 v-trans="{
+                transition:{opacity:1,transition:'opacity 1s .4s'},
+                enter:{opacity:0},
+                leave:{opacity:0,transition:'opacity .5s .1s'}}">
+                <img class="copy-12-2" src="img/11_copy_02.png">
+                <p class="score-12"> {{ testScore }} </p>
+                <!--<img class="ray-12" src="img/11_ray.png" v-anim="{animation:'ray-12 4s linear infinite',frames:{-->
+                  <!--'0%':{},'50%':{rotate:4},'100%':{} }}">-->
+                <img class="ray-12" src="img/11_ray.png" v-anim="{animation:'ray-12 4s linear infinite',frames:[
+                {},{rotate:4},{},'%'] }">
+
+            </div>
+
+            <div v-if="currentPage==12" transition="copy-12-5"
+                 v-trans="{
+                 transition:{opacity:1,transition:'opacity 1s .6s'},
+                 enter:{opacity:0},
+                 leave:{opacity:0,transition:'opacity .5s .1s'}}">
+                <img class="copy-12-5" :src="scoreInstruction()">
+            </div>
+
+
+            <div v-if="currentPage==12" transition="stars-12"
+                 v-trans="{
+                     transition:{opacity:1,transition:'all 5s .6s'},
+                     enter:{opacity:0,rotate:60},
+                     leave:{opacity:0}}">
+                <img class="stars-12" src="img/11_copy_07_8_10_big.png"
+                     v-anim="{name:'stars-12',time:'2s',frames:{
+                    '0%':{scale:0},'50%':{left:0,scale:1.3},'100%':{scale:0},ext:'%' }}">
+            </div>
+
+            <img class="btn-12-home btncc" @click="popup1.show=true" src="img/11_btn_09.png">
+            <img class="btn-12-school btncc" @click="popup2.show=true" src="img/11_btn_08.png">
+            <img class="btn-12-share btncc" src="img/11_btn_10.png">
+
+        </div>
+
+    </div>
+
+
+    <vue-popup title="家庭准备 Ready families" :popup.sync="popup1"  :footer="false" >
+        <div class="pp1-content">
+            <ul>
+                <li>
+                    为小学老师树立正面形象，不用小学老师和小学生活吓唬孩子。
+                </li>
+                <li>
+                    经常告诉孩子“你就要成为一年级小学生了。”激发孩子成为一年级小学生的渴望心理。
+                </li>
+                <li>
+                    培养孩子独立完成任务的能力和基本的生活自理能力。
+                </li>
+                <li>
+                    带幼儿接触不同的人际环境，如参加亲戚朋友聚会，多和不熟悉的小朋友玩，使幼儿较快适应新的人际关系。
+                </li>
+                <li>
+                    提前带孩子参观小学，带孩子熟悉上学路线。
+                </li>
+            </ul>
+        </div>
+    </vue-popup>
+
+    <vue-popup title="学校准备 Ready schools" :popup.sync="popup2" :footer="true" >
+        <div class="pp2-content">
+            <ul>
+                <li>
+                    1. 幼儿园 Ready kindergarten
+                    <ul>
+                        <li>
+                            为小学老师和小学生活树立正面形象，不用小学老师和小学生活吓唬孩子。
+                        </li>
+                        <li>
+                            在大班最后1~2个月适当调整作息时间。如，适当延长集体活动时间。
+                        </li>
+                        <li>
+                            带领大班幼儿参观小学，讲讲小学有趣的活动，唤起他们对小学生活的好奇和向往，为入学做好心理准备。
+                        </li>
+                        <li>
+                            给幼儿布置适当的口头小任务，鼓励幼儿自己独立完成。
+                        </li>
+                        <li>
+                            多为幼儿提供自由交往和游戏的机会，鼓励他们自主选择、自由结伴开展活动。
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    2. 小学 Ready primary school
+                    <ul>
+                        <li>
+                            组织“校园体验日活动”，欢迎幼儿、家长带着孩子们到学校来，由老师和高年级的同学们带着在校园内走一走、看一看。
+                        </li>
+                        <li>
+                            新生入学后，通过游戏的形式让孩子熟悉校园环境、班级同学、生活常规和学习内容。
+                        </li>
+                        <li>
+                            选择耐心、细心、和蔼、亲切，并有一定带班经验的班主任。其他教师的配备也最好在年龄、性别、性格、兴趣以及特长等方面进行统筹协调。
+                        </li>
+                        <li>
+                            教学内容坚持“零起点”。照顾到每一个学生的基础，不随意提高教学起点和进度
+                        </li>
+                        <li>
+                            小学取消入学考试，一年级上学期不考试，避免使一年级新生感到竞争压力太大。
+                        </li>
+                        <li>
+                            与家长及时保持沟通联系，提前到6月召开新生家长会，让家长了解学校基本求、每日生活学习安排等。学期中经常联络家长帮助家长了解学生在校情况。
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </vue-popup>
+
+    <!-- logo -->
+    <img class="logo" src="img/00_logo.png">
+
+    <!--音乐开关-->
+    <div @click="musicison = !musicison" v-cloak>
+        <img class="btn-music" v-if="musicison" src="img/00_music.png">
+        <img class="btn-music" v-if="!musicison" src="img/00_music_close.png">
+        <audio v-if="musicison" loop autoplay hidden src="audio/child-joy.mp3">
+            您的浏览器不支持audio标签
+            <embed src="audio/child-joy.mp3"></embed>
+        </audio>
+    </div>
+
+    <!--&lt;!&ndash; 如果需要分页器 &ndash;&gt;-->
+    <!--<div class="swiper-pagination"></div>-->
+
+    <!-- 如果需要导航按钮 -->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+
+    <!--&lt;!&ndash; 如果需要滚动条 &ndash;&gt;-->
+    <!--<div class="swiper-scrollbar"></div>-->
+
+
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/css-builder.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/cloud-float.js"></script>
+<script src="js/vue-fastclick.js"></script>
+<script src="js/vue-popup.js"></script>
+<script src="js/vuedemo.js"></script>
+
+</html>
