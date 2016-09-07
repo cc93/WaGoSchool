@@ -1,0 +1,29 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    /*margin: 0 auto;*/
+    /*大屏自动居中*/
+    font-family: 'Microsoft YaHei', Arial, Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}

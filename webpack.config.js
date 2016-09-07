@@ -2,11 +2,11 @@ var webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: './js/index.js',
+  entry: './js/index-1.2.js',
   output: {
     path: __dirname + '/build',
     publicPath: '/build/',
-    filename: 'index.js'
+    filename: 'index-1.2.js'
   },
   module: {
     //preloaders:[
@@ -14,8 +14,8 @@ module.exports = {
     //],
     loaders: [
       { test: /\.js$/, loader: 'babel', include: /js/, query:{presets:['es2015','react']}},
-      { test: /\.css$/,  loader: "style!css" },
-      { test: /\.jp(e)?g|png|gif|svg|ttf|eot|woff|woff2$/, loader:'url?limit=8192&name=./build/[hash].[ext]'},
+      //{ test: /\.css$/,  loader: "style!css" },
+      //{ test: /\.jp(e)?g|png|gif|svg|ttf|eot|woff|woff2$/, loader:'url?limit=8192&name=./build/[hash].[ext]'},
       //{ test: /\.svg|ttf|eot|woff|woff2$/, loader:'file&name=./build/[hash].[ext]'}
     ]
   },
